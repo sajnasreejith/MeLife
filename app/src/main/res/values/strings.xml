@@ -1,0 +1,128 @@
+<resources>
+    <string name="app_name">MeLife</string>
+    <string name="splash_app_name">3G MELIFE</string>
+    <string name="Logoname_part1">3G</string>
+    <string name="Logoname_part2">ME LIFE</string>
+    <string name="Signup">Sign UP</string>
+    <string name="Login">Login </string>
+
+    <!--Login-->
+    <string name="Title_username">Username or Email Address </string>
+    <string name="Title_Password">Password </string>
+    <string name="Title_remember">Remember </string>
+    <string name="Title_fgt_pwd">Forgot password </string>
+    <string name="Title_google">Google </string>
+    <string name="Title_facebook">Facebook </string>
+
+    <!--Register-->
+    <string name="Title_firstname">First Name </string>
+    <string name="Title_LastName">Last Name </string>
+    <string name="Title_Email">Email ID</string>
+    <string name="Title_male">Male </string>
+    <string name="Title_female">Female </string>
+    <string name="Title_others">Others </string>
+    <string name="Title_retype_pwd">Retype Password</string>
+
+    <!--    BaseACtvity-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="title_activity_base">3G ME LIFE</string>
+    <!--home fragment-->
+
+
+    <string name="text_psy_test">Psychometrics Tests</string>
+    <string name="text_faq">FAQ </string>
+    <string name="text_contactus">Contact Us   </string>
+    <string name="text_aboutus">About Us</string>
+    <string name="text_setting">Setting </string>
+    <string name="text_testreports">Test Reports </string>
+
+
+    <!--    submenus-->
+    <string-array name="string_array_psytests">
+        <item>Skill Finder Test </item>
+        <item>Stream Finder Test </item>
+        <item>Engineering Career Finder Test </item>
+        <item>Commerce Career Finder Test </item>
+        <item>Humanities Career Finder Test</item>
+        <item>Right Career Finder Test</item>
+
+    </string-array>
+
+    <string-array name="string_array_testreport">
+        <item>Espresso</item>
+        <item>Macchiato</item>
+        <item>Cappuccino</item>
+        <item>Cafe Latte</item>
+        <item>Ristretto</item>
+    </string-array>
+
+    <string-array name="string_array_faq">
+        <item>Carbonara</item>
+        <item>Capellini</item>
+        <item>Spaghetti</item>
+        <item>Gnocchi</item>
+        <item>Lasagnette</item>
+    </string-array>
+
+    <string-array name="string_array_contactus">
+        <item>Cola</item>
+        <item>Lemonade</item>
+        <item>Citrus soda</item>
+        <item>Juice</item>
+        <item>Sparkling Water</item>
+    </string-array>
+    <string-array name="string_array_aboutus">
+        <item>Cola</item>
+        <item>Lemonade</item>
+        <item>Citrus soda</item>
+        <item>Juice</item>
+        <item>Sparkling Water</item>
+    </string-array>
+    <string-array name="string_array_setting">
+        <item>Cola</item>
+        <item>Lemonade</item>
+        <item>Citrus soda</item>
+        <item>Juice</item>
+        <item>Sparkling Water</item>
+    </string-array>
+    <!--skilltest-->
+    <string name="Title_skilltest">Skill Finder Test</string>
+    <string name="Title_viewreport">View Report</string>
+    <string name="Title_starttest">Start Test</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--instructions-->
+    <string name="Title_instrction">Please read the instructions carefully</string>
+    <string name="instructions">
+       This section contains 42 statements which contain the work/things you
+        are interested to do in your life, Please mark your interest in each activity shown from the alternatives oﬀered. Go by your ﬁrst reaction and answer each question honestly. Simply think about whether you would enjoy doing it or not. Read the instructions carefully and provide with honest and reliable responses for the questions. There is no right or wrong answers. You may choose the response that most appropriately suits you.
+A. Like extremely B. Like very much C. Neutral D. Dislike very much E. Dislike extremely
+    </string>
+    <string name="answera">A. Like extremely </string>
+    <string name="answerb">B. Like very much </string>
+    <string name="answerc">  C. Neutral </string>
+    <string name="answerd"> D. Dislike very much </string>
+    <string name="answere">E. Dislike extremely</string>
+    <string name="terms"> I have read and understood the instructions.</string>
+    <string name="Title_proceed">Proceed</string>
+
+    <!--    Question and Answers-->
+
+    <string name="Title_Qno">Question:1</string>
+    <string name="Title_Qn">Like to do research on science ?</string>
+    <string name="Title_next">Next</string>
+    <string name="Title_cele">Celebrations</string>
+
+</resources>

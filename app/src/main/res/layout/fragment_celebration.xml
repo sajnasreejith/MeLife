@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_blue"
+    tools:context=".activities.ui.fragments.CelebrationFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_gravity="center_horizontal|center_vertical">
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center_horizontal|center_vertical"
+           android:orientation="horizontal">
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+              android:paddingRight="30dp"
+               android:src="@drawable/star2" />
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/star3" />
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+              android:paddingLeft="30dp"
+               android:src="@drawable/star2" />
+       </LinearLayout>
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content">
+
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/star3"/>
+
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:text="@string/Title_cele"
+           android:textColor="@color/whiteLogocolor"
+           android:textSize="50dp"
+           android:layout_height="wrap_content"/>
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:src="@drawable/star3"/>
+       </LinearLayout>
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_gravity="center_horizontal|center_vertical"
+           android:layout_height="wrap_content">
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:paddingRight="90dp"
+               android:src="@drawable/star"/>
+           <ImageView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:paddingLeft="90dp"
+               android:src="@drawable/star"/>
+       </LinearLayout>
+   </LinearLayout>
+
+</FrameLayout>

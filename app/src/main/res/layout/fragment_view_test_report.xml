@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ui.fragments.ViewTestReportFragment">
+
+
+    <LinearLayout
+        android:orientation="vertical" android:gravity="center_horizontal|center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_weight="0.2">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:orientation="horizontal"
+                android:background="@drawable/listview_shading"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:paddingLeft="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/right" />
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:textColor="@color/lightblue"
+                    android:textStyle="bold"
+                    android:paddingLeft="10dp"
+                    android:layout_gravity="center"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:paddingLeft="10dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/right" />
+            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="130dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_height="wrap_content"
+                android:id="@+id/skill2"
+                android:src="@drawable/skill2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/skillimage"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:id="@+id/skill_title"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginTop="20dp"
+                android:text="@string/Title_skilltest"
+                android:textColor="@color/lightblue" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="0.4">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Title_viewreport"
+                android:id="@+id/btn_viewreport"
+                android:textColor="@color/whiteLogocolor"
+                android:background="@drawable/button_filleddrawable"
+                android:drawableRight="@drawable/whitearow"
+                android:layout_gravity="center_horizontal|center_vertical"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

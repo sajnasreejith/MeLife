@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/instruction_layout"
+    tools:context=".activities.ui.fragments.InstructionsFragment">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal"
+            android:background="@drawable/listview_shading"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:paddingLeft="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/right" />
+            <TextView
+                android:id="@+id/title_instruction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/lightblue"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:layout_gravity="center"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:paddingLeft="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/right" />
+            <TextView
+                android:id="@+id/title_instruction2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/lightblue"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="0.2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/lightblue"
+                android:text="@string/Title_instrction"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="330dp"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_weight="0.3">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                 android:textSize="15dp"
+                android:text="@string/instructions"
+                android:textColor="@color/lightblue" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                style="@style/style_answer"
+                android:text="@string/answera"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/style_answer"
+                android:text="@string/answerb"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/style_answer"
+                android:text="@string/answerc"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/style_answer"
+                android:text="@string/answerd"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/style_answer"
+                android:text="@string/answere"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/lightblue"
+                android:text="@string/terms"
+                style="@style/style_answer"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="135dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="0.4">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Title_proceed"
+                android:id="@+id/btn_proceed"
+                android:textColor="@color/whiteLogocolor"
+                android:background="@drawable/button_filleddrawable"
+                android:drawableRight="@drawable/whitearow"
+                android:layout_gravity="center_horizontal|center_vertical"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

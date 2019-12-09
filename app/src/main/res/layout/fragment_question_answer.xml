@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/qa_layout"
+    tools:context=".activities.ui.fragments.QuestionAnswerFragment">
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal"
+            android:background="@drawable/listview_shading"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:paddingLeft="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/right" />
+            <TextView
+                android:id="@+id/title_qa1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/lightblue"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:layout_gravity="center"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:paddingLeft="10dp"
+                android:layout_gravity="center"
+                android:src="@drawable/right" />
+            <TextView
+                android:id="@+id/title_qa2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/lightblue"
+                android:textStyle="bold"
+                android:paddingLeft="10dp"
+                android:layout_gravity="center"
+                />
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/lightblue"
+                android:textStyle="bold"
+                android:paddingLeft="30dp"
+                android:gravity="right"
+                android:layout_marginTop="20dp"
+                />
+        </LinearLayout>
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="left"-->
+<!--            android:layout_weight="0.2">-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:gravity="center"-->
+<!--                android:textSize="20dp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="@color/lightblue"-->
+<!--                android:text="@string/Title_Qno"/>-->
+<!--        </LinearLayout>-->
+        <LinearLayout
+            android:layout_width="330dp"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="vertical"
+            android:layout_weight="0.3">
+
+            <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:textSize="20dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/darkblue"
+                            android:text="@string/Title_Qno"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:textColor="@color/darkblue"
+                android:textStyle="bold"
+                android:text="@string/Title_Qn"/>
+
+            <Button
+                style="@style/style_answer_button"
+                android:id="@+id/answera"
+                android:text="@string/answera"/>
+            <Button
+                style="@style/style_answer_button"
+                android:id="@+id/answerb"
+                android:text="@string/answerb"/>
+            <Button
+                style="@style/style_answer_button"
+                android:id="@+id/answerc"
+                android:text="@string/answerc"/>
+            <Button
+                style="@style/style_answer_button"
+                android:id="@+id/answerd"
+                android:text="@string/answerd"/>
+            <Button
+                style="@style/style_answer_button"
+                android:id="@+id/answere"
+                android:text="@string/answere"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_weight="0.4">
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:background="@drawable/button_filleddrawable"
+                android:drawableRight="@drawable/whitearow"
+                android:text="@string/Title_next"
+                android:textColor="@color/whiteLogocolor" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</FrameLayout>
