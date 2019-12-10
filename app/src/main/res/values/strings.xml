@@ -120,7 +120,7 @@ A. Like extremely B. Like very much C. Neutral D. Dislike very much E. Dislike e
 
     <!--    Question and Answers-->
 
-    <string name="Title_Qno">Question:1</string>
+    <string name="Title_Qno">Question</string>
     <string name="Title_Qn">Like to do research on science ?</string>
     <string name="Title_next">Next</string>
     <string name="Title_cele">Celebrations</string>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:gravity="center_horizontal"
+    android:background="@drawable/back"
     android:orientation="vertical"
     tools:context=".Authentication.ChooseLogin">
 
@@ -22,31 +23,31 @@
         <ImageView
             android:id="@+id/logo"
             android:layout_width="100dp"
+            android:src="@drawable/smalllogo"
             android:layout_height="100dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/smalllogo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:letterSpacing="0.1"
-            android:text="@string/Logoname_part1"
-            android:textColor="@color/darkblue"
-            android:textSize="@android:dimen/app_icon_size" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:letterSpacing="0.1"-->
+<!--            android:text="@string/Logoname_part1"-->
+<!--            android:textColor="@color/whiteLogocolor"-->
+<!--            android:textSize="@android:dimen/app_icon_size" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
-            android:letterSpacing="0.1"
-            android:text="@string/Logoname_part2"
-            android:textColor="@color/lightblue"
-            android:textSize="45dp" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:letterSpacing="0.1"-->
+<!--            android:text="@string/Logoname_part2"-->
+<!--            android:textColor="@color/lightblue"-->
+<!--            android:textSize="45dp" />-->
 
     </LinearLayout>
 
@@ -59,22 +60,31 @@
         app:layout_constraintTop_toBottomOf="@+id/linear"
         android:layout_height="wrap_content"
       >
-<Button
-    android:layout_width="300dp"
-    android:layout_height="wrap_content"
-    android:text="@string/Signup"
-    android:id="@+id/btn_signup"
-    android:textColor="@color/lightblue"
-    android:background="@drawable/button_drawable"
-    />
-        <Button
+        <com.skydoves.elasticviews.ElasticButton
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/Login"
-            android:id="@+id/btn_login"
+            android:layout_marginTop="80dp"
+            android:layout_height="60dp"
+            android:text="Sign In"
+            android:textStyle="italic"
+            android:id="@+id/login"
+        android:background="@drawable/buttondraw"
             android:textColor="@color/whiteLogocolor"
-            android:background="@drawable/button_filleddrawable"
-            />
+            android:textSize="17sp"
+            app:button_cornerRadius="4dp"
+            app:button_duration="250"
+            app:button_scale="0.87" />
+
+        <com.skydoves.elasticviews.ElasticButton
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:text="New Users"
+            android:textStyle="italic"
+            android:id="@+id/signup"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/whiteLogocolor"
+            android:textSize="17sp"
+            app:button_cornerRadius="4dp"
+            app:button_duration="250"
+            app:button_scale="0.87" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

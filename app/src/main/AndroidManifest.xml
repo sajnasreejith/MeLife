@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="GoogleAppIndexingWarning"
-    package="com.technohub.melife">
+    package="com.technohub.melife"
+    tools:ignore="GoogleAppIndexingWarning">
 
     <application
         android:allowBackup="true"
@@ -14,17 +14,17 @@
         <activity
             android:name=".activities.BaseActivity"
             android:label="@string/title_activity_base"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".Authentication.SignUpScreen" />
-        <activity android:name=".Authentication.LoginScreen" >
-        </activity>
-        <activity android:name=".Authentication.ChooseLogin" >
+        <activity android:name=".Authentication.LoginScreen"></activity>
+        <activity
+            android:name=".Authentication.ChooseLogin">
+
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

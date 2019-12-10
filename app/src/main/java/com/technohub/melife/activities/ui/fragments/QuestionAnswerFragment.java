@@ -1,6 +1,7 @@
 package com.technohub.melife.activities.ui.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -37,7 +38,7 @@ public class QuestionAnswerFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String title,strSelected_ans;
     TextView pagetitle1,pagetitle2;
-    TextView timer,Question;
+    TextView timer,Question,Qno;
     Button answera,answerb,answerc,answerd,answere,btnnext;
     View v;
     int flag=0;
@@ -72,7 +73,6 @@ public class QuestionAnswerFragment extends Fragment {
         if (getArguments() != null) {
             title = getArguments().getString(Constants.PAGETITLE_KEY);
             Log.e("qa title",title);
-
         }
     }
 
@@ -143,9 +143,15 @@ public class QuestionAnswerFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 flag++;
+                Qno.setText(flag+"");
+                setBackgroundColor_Button();
                 if(flag<Constants.questions.length)
                 {
                     Question.setText(Constants.questions[flag]);
+                }
+                else
+                {
+                    fun();
                 }
             }
         });
@@ -157,6 +163,7 @@ public class QuestionAnswerFragment extends Fragment {
         switch (v.getId()) {
             case R.id.answera:
               strSelected_ans=answera.getText().toString();
+              Log.e("Answer",strSelected_ans);
                 break;
             case R.id.answerb:
                 strSelected_ans=answera.getText().toString();
@@ -168,7 +175,7 @@ public class QuestionAnswerFragment extends Fragment {
                 strSelected_ans=answerd.getText().toString();
                 break;
             case R.id.answere:
-                strSelected_ans=answere.getText().toString();
+                 strSelected_ans=answere.getText().toString();
                 break;
 
         }}
@@ -176,7 +183,6 @@ public class QuestionAnswerFragment extends Fragment {
 
     void fun()
     {
-
             // Create new fragment and transaction
             Fragment newFragment = new CelebrationFragment();
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
@@ -184,9 +190,16 @@ public class QuestionAnswerFragment extends Fragment {
             // and add the transaction to the back stack
             transaction.replace(R.id.qa_layout, newFragment);
             transaction.addToBackStack(null);
-
             transaction.commit();
 
+    }
+    void setBackgroundColor_Button()
+    {
+        answere.setBackgroundResource(R.drawable.button_filleddrawable);
+        answerb.setBackgroundResource(R.drawable.button_filleddrawable);
+        answerc.setBackgroundResource(R.drawable.button_filleddrawable);
+        answerd.setBackgroundResource(R.drawable.button_filleddrawable);
+        answera.setBackgroundResource(R.drawable.button_filleddrawable);
     }
     void initViews()
     {
@@ -200,6 +213,7 @@ public class QuestionAnswerFragment extends Fragment {
         pagetitle2=v.findViewById(R.id.title_qa2);
         btnnext=v.findViewById(R.id.btn_next);
         Question=v.findViewById(R.id.txtQuestion);
+        Qno=v.findViewById(R.id.txtQno);
     }
     // TODO: Rename method, update argument and hook method into UI event
 //    public void onButtonPressed(Uri uri) {
@@ -213,6 +227,8 @@ public class QuestionAnswerFragment extends Fragment {
         super.onResume();
         pagetitle1.setText(title);
         pagetitle2.setText(Constants.PAGETITLE_INTEREST);
+        Question.setText(Constants.questions[flag]);
+        Qno.setText(flag+1+" ");
         new CountDownTimer(60000, 1000) {
             public void onTick(long millisUntilFinished) {
                 timer.setText(""+ millisUntilFinished / 1000);

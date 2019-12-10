@@ -9,4 +9,5 @@
     <color name="google_red">#DC143C</color>
     <color name="edittext_blue">#dbF0F6</color>
     <color name="transparent_blue">#8C29B6F6</color>
+    <color name="greycolor"> #80778899</color>
 </resources>

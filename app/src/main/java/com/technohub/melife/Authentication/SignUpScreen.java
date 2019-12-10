@@ -15,12 +15,5 @@ public class SignUpScreen extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_sign_up_screen);
-    findViewById(R.id.btn_login).setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        startActivity(new Intent(getApplicationContext(), BaseActivity.class));
-      }
-    });
-
   }
 }

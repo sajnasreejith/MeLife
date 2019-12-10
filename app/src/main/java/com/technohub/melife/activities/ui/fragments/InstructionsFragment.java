@@ -99,7 +99,6 @@ public class InstructionsFragment extends Fragment {
         // and add the transaction to the back stack
         transaction.replace(R.id.instruction_layout, newFragment);
         transaction.addToBackStack(null);
-
         transaction.commit();
     }
     @Override

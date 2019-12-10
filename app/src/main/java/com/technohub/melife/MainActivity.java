@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
                 // Start your app main activity
                 Intent i = new Intent(MainActivity.this, ChooseLogin.class);
                 startActivity(i);
-
                 // Close this activity
                 finish();
             }
