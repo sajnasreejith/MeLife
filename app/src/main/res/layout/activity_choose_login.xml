@@ -77,11 +77,12 @@
         <com.skydoves.elasticviews.ElasticButton
             android:layout_width="300dp"
             android:layout_height="60dp"
+            android:background="@drawable/button_drawable"
             android:text="New Users"
             android:textStyle="italic"
             android:id="@+id/signup"
             android:layout_marginTop="20dp"
-            android:textColor="@color/whiteLogocolor"
+            android:textColor="@color/darkblue"
             android:textSize="17sp"
             app:button_cornerRadius="4dp"
             app:button_duration="250"
