@@ -24,7 +24,6 @@ import java.util.concurrent.TimeUnit;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link QuestionAnswerFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link QuestionAnswerFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -36,13 +35,14 @@ public class QuestionAnswerFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
-    private String title;
+    private String title,strSelected_ans;
     TextView pagetitle1,pagetitle2;
-    TextView timer;
+    TextView timer,Question;
     Button answera,answerb,answerc,answerd,answere,btnnext;
     View v;
+    int flag=0;
 
-    private OnFragmentInteractionListener mListener;
+//    private OnFragmentInteractionListener mListener;
 
     public QuestionAnswerFragment() {
         // Required empty public constructor
@@ -85,6 +85,7 @@ public class QuestionAnswerFragment extends Fragment {
          answera.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
+                 buttonPress(v);
                  answera.setBackgroundResource(R.drawable.bluedrawable);
                  answerb.setBackgroundResource(R.drawable.button_filleddrawable);
                  answerc.setBackgroundResource(R.drawable.button_filleddrawable);
@@ -96,6 +97,7 @@ public class QuestionAnswerFragment extends Fragment {
         answerb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                buttonPress(v);
                 answerb.setBackgroundResource(R.drawable.bluedrawable);
                 answera.setBackgroundResource(R.drawable.button_filleddrawable);
                 answerc.setBackgroundResource(R.drawable.button_filleddrawable);
@@ -106,6 +108,7 @@ public class QuestionAnswerFragment extends Fragment {
         answerc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                buttonPress(v);
                 answerc.setBackgroundResource(R.drawable.bluedrawable);
                 answera.setBackgroundResource(R.drawable.button_filleddrawable);;
                 answerb.setBackgroundResource(R.drawable.button_filleddrawable);
@@ -116,6 +119,7 @@ public class QuestionAnswerFragment extends Fragment {
         answerd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                buttonPress(v);
                 answerd.setBackgroundResource(R.drawable.bluedrawable);
                 answerb.setBackgroundResource(R.drawable.button_filleddrawable);
                 answerc.setBackgroundResource(R.drawable.button_filleddrawable);
@@ -126,6 +130,7 @@ public class QuestionAnswerFragment extends Fragment {
         answere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                buttonPress(v);
                 answere.setBackgroundResource(R.drawable.bluedrawable);
                 answerb.setBackgroundResource(R.drawable.button_filleddrawable);
                 answerc.setBackgroundResource(R.drawable.button_filleddrawable);
@@ -137,11 +142,38 @@ public class QuestionAnswerFragment extends Fragment {
         btnnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fun();
+                flag++;
+                if(flag<Constants.questions.length)
+                {
+                    Question.setText(Constants.questions[flag]);
+                }
             }
         });
          return v;
     }
+
+
+        public void buttonPress(View v) {
+        switch (v.getId()) {
+            case R.id.answera:
+              strSelected_ans=answera.getText().toString();
+                break;
+            case R.id.answerb:
+                strSelected_ans=answera.getText().toString();
+                break;
+            case R.id.answerc:
+                strSelected_ans=answerc.getText().toString();
+                break;
+            case R.id.answerd:
+                strSelected_ans=answerd.getText().toString();
+                break;
+            case R.id.answere:
+                strSelected_ans=answere.getText().toString();
+                break;
+
+        }}
+
+
     void fun()
     {
 
@@ -167,13 +199,14 @@ public class QuestionAnswerFragment extends Fragment {
         pagetitle1=v.findViewById(R.id.title_qa1);
         pagetitle2=v.findViewById(R.id.title_qa2);
         btnnext=v.findViewById(R.id.btn_next);
+        Question=v.findViewById(R.id.txtQuestion);
     }
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
+//    public void onButtonPressed(Uri uri) {
+//        if (mListener != null) {
+//            mListener.onFragmentInteraction(uri);
+//        }
+//    }
 
     @Override
     public void onResume() {
@@ -203,21 +236,7 @@ public class QuestionAnswerFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
+//        mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
     }
-}
