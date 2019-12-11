@@ -22,6 +22,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.technohub.melife.R;
 import com.technohub.melife.activities.adapters.HomeScreenAdapter;
 import com.technohub.melife.activities.classes.Constants;
+import com.technohub.melife.activities.ui.fragments.HomeFragmentGrid;
 import com.technohub.melife.activities.ui.fragments.InstructionsFragment;
 import com.technohub.melife.activities.ui.fragments.StartSkillTestFragment;
 
@@ -81,7 +82,7 @@ public class HomeFragment extends Fragment {
 void fun(String value)
 {
     // Create new fragment and transaction
-    Fragment newFragment = new StartSkillTestFragment();
+    Fragment newFragment = new HomeFragmentGrid();
     Bundle args = new Bundle();
     args.putString(Constants.PAGETITLE_KEY,value);
     newFragment.setArguments(args);
