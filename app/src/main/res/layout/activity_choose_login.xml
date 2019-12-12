@@ -60,28 +60,16 @@
         app:layout_constraintTop_toBottomOf="@+id/linear"
         android:layout_height="wrap_content"
       >
-        <com.skydoves.elasticviews.ElasticButton
-            android:layout_width="300dp"
-            android:layout_marginTop="80dp"
-            android:layout_height="60dp"
-            android:text="Sign In"
-            android:textStyle="italic"
-            android:id="@+id/login"
-        android:background="@drawable/buttondraw"
-            android:textColor="@color/whiteLogocolor"
-            android:textSize="17sp"
-            app:button_cornerRadius="4dp"
-            app:button_duration="250"
-            app:button_scale="0.87" />
+
 
         <com.skydoves.elasticviews.ElasticButton
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:background="@drawable/button_drawable"
-            android:text="New Users"
+            android:text="Sign In"
             android:textStyle="italic"
             android:id="@+id/signup"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="150dp"
             android:textColor="@color/darkblue"
             android:textSize="17sp"
             app:button_cornerRadius="4dp"

@@ -14,13 +14,18 @@ public class LoginScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_screen);
-        findViewById(R.id.btn_login).setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.loginpage);
+        findViewById(R.id.btn_signin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), BaseActivity.class));
             }
         });
-
+        findViewById(R.id.btn_signup).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), SignUpScreen.class));
+            }
+        });
     }
 }

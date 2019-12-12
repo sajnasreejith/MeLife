@@ -1,239 +1,203 @@
 package com.technohub.melife.activities.ui.home;
 
-import android.app.FragmentManager;
-import android.content.Intent;
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ExpandableListView;
-import android.widget.FrameLayout;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.technohub.melife.R;
-import com.technohub.melife.activities.adapters.HomeScreenAdapter;
 import com.technohub.melife.activities.classes.Constants;
-import com.technohub.melife.activities.ui.fragments.HomeFragmentGrid;
 import com.technohub.melife.activities.ui.fragments.InstructionsFragment;
 import com.technohub.melife.activities.ui.fragments.StartSkillTestFragment;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-
+/**
+ * A simple {@link Fragment} subclass.
+ * Activities that contain this fragment must implement the
+ * {@link HomeFragment.OnFragmentInteractionListener} interface
+ * to handle interaction events.
+ * Use the {@link HomeFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
 public class HomeFragment extends Fragment {
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
 
-    private HomeViewModel homeViewModel;
-    private ExpandableListView expandableListView;
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+        View v;
+    Animation animBounce;
+    ImageView ptest,faq,setting,contactus,aboutus,testreport;
+    CardView txtptest,txtfaq,txtcontact,txtabout,txtsetting,txttestreport;
+    private OnFragmentInteractionListener mListener;
 
-    private HomeScreenAdapter expandableListViewAdapter;
-
-    private List<String> listDataGroup;
-    View root;
-    FrameLayout fm;
-    private HashMap<String, List<String>> listDataChild;
-
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        root = inflater.inflate(R.layout.fragment_home, container, false);
-
-
-        // initializing the views
-        initViews();
-
-        // initializing the listeners
-        initListeners();
-
-        // initializing the objects
-        initObjects();
-
-        // preparing list data
-        initListData();
-
-
-        return root;
+    public HomeFragment() {
+        // Required empty public constructor
     }
-
 
     /**
-     * method to initialize the views
-     */
-    private void initViews() {
-//        DisplayMetrics metrics = new DisplayMetrics();
-//        getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
-//        int width = metrics.widthPixels;
-        expandableListView = root.findViewById(R.id.list_menu);
-        fm=root.findViewById(R.id.skillfragment);
-//        expandableListView.setIndicatorBounds(width - GetPixelFromDips(50), width - GetPixelFromDips(10));
-
-    }
-void fun(String value)
-{
-    // Create new fragment and transaction
-    Fragment newFragment = new HomeFragmentGrid();
-    Bundle args = new Bundle();
-    args.putString(Constants.PAGETITLE_KEY,value);
-    newFragment.setArguments(args);
-    FragmentTransaction transaction = getFragmentManager().beginTransaction();
-
-// Replace whatever is in the fragment_container view with this fragment,
-// and add the transaction to the back stack
-    transaction.replace(R.id.nav_host_fragment, newFragment);
-    transaction.addToBackStack(null);
-    transaction.commit();
-}
-    public int GetPixelFromDips(float pixels) {
-        // Get the screen's density scale
-        final float scale = getResources().getDisplayMetrics().density;
-        // Convert the dps to pixels, based on density scale
-        return (int) (pixels * scale + 0.5f);
-    }
-    /**
-     * method to initialize the listeners
-     */
-    private void initListeners() {
-
-
-        // ExpandableListView on child click listener
-        expandableListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v,
-                                        int groupPosition, int childPosition, long id) {
-
-
-
-                fun(listDataGroup.get(groupPosition).toString());
-                Toast.makeText(
-                        getContext(),
-                        listDataGroup.get(groupPosition)
-                                + " : "
-                                + listDataChild.get(
-                                listDataGroup.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT)
-                        .show();
-
-                return false;
-            }
-        });
-        // ExpandableListView Group expanded listener
-        expandableListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-
-            @Override
-            public void onGroupExpand(int groupPosition) {
-                Toast.makeText(getContext(),
-                        listDataGroup.get(groupPosition) + " " + getString(R.string.text_psy_test),
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        // ExpandableListView Group collapsed listener
-        expandableListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
-
-            @Override
-            public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getContext(),
-                        listDataGroup.get(groupPosition) + " " + getString(R.string.text_psy_test),
-                        Toast.LENGTH_SHORT).show();
-
-            }
-        });
-    }
-    /**
-     * method to initialize the objects
-     */
-    private void initObjects() {
-
-        // initializing the list of groups
-        listDataGroup = new ArrayList<>();
-
-        // initializing the list of child
-        listDataChild = new HashMap<>();
-
-        // initializing the adapter object
-        expandableListViewAdapter = new HomeScreenAdapter(getContext(), listDataGroup, listDataChild);
-
-        // setting list adapter
-        expandableListView.setAdapter(expandableListViewAdapter);
-
-    }
-    /*
-     * Preparing the list data
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
      *
-     * Dummy Items
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment HomeFragment.
      */
-    private void initListData() {
+    // TODO: Rename and change types and number of parameters
+    public static HomeFragment newInstance(String param1, String param2) {
+        HomeFragment fragment = new HomeFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
+        fragment.setArguments(args);
+        return fragment;
+    }
 
-        // Adding group data
-        listDataGroup.add(getString(R.string.text_psy_test));
-        listDataGroup.add(getString(R.string.text_testreports));
-        listDataGroup.add(getString(R.string.text_faq));
-        listDataGroup.add(getString(R.string.text_contactus));
-        listDataGroup.add(getString(R.string.text_aboutus));
-        listDataGroup.add(getString(R.string.text_setting));
-
-        // array of strings
-        String[] array;
-
-        // list of alcohol
-        List<String> psychometric_List = new ArrayList<>();
-        array = getResources().getStringArray(R.array.string_array_psytests);
-        for (String item : array) {
-            psychometric_List.add(item);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
         }
+    }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        v=inflater.inflate(R.layout.fragment_home_fragment_new, container, false);
+                                initView();
+        animBounce = AnimationUtils.loadAnimation(getContext(),
+                R.anim.bounce_animation);
 
-//        // list of coffee
-        List<String> testReportList = new ArrayList<>();
-        array = getResources().getStringArray(R.array.string_array_testreport);
-        for (String item : array) {
-            testReportList.add(item);
-        }
+        ptest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ptest.startAnimation(animBounce);
+                fun();
+//                txtptest.setCardBackgroundColor(R.drawable.button_drawable);
+            }
+        });
 
-//        // list of pasta
-        List<String> faqList = new ArrayList<>();
-        array = getResources().getStringArray(R.array.string_array_faq);
-        for (String item : array) {
-            faqList.add(item);
-        }
 
-        // list of cold drinks
-        List<String> contactUsList = new ArrayList<>();
-        array = getResources().getStringArray(R.array.string_array_contactus);
-        for (String item : array) {
-            contactUsList.add(item);
-        }
+        faq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                faq.startAnimation(animBounce);
+//                txtfaq.setCardBackgroundColor(R.drawable.button_drawable);
+            }
+        });
 
-        List<String> aboutus_list = new ArrayList<>();
-        array = getResources().getStringArray(R.array.string_array_aboutus);
-        for (String item : array) {
-            aboutus_list.add(item);
-        }
 
-        List<String> setting_List = new ArrayList<>();
-        array = getResources().getStringArray(R.array.string_array_setting);
-        for (String item : array) {
-            setting_List.add(item);
+        contactus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                contactus.startAnimation(animBounce);
+//                txtcontact.setCardBackgroundColor(R.drawable.button_drawable);
+            }
+        });
+
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setting.startAnimation(animBounce);
+//                txtsetting.setCardBackgroundColor(R.drawable.button_drawable);
+            }
+        });
+
+        testreport.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                testreport.startAnimation(animBounce);
+                txttestreport.setCardBackgroundColor(R.drawable.button_drawable);
+            }
+        });
+        aboutus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                aboutus.startAnimation(animBounce);
+//                txtabout.setCardBackgroundColor(R.drawable.button_drawable);
+            }
+        });
+        return v;
+    }
+
+    void initView()
+    {
+        ptest=v.findViewById(R.id.btn_psychotest);
+        faq=v.findViewById(R.id.btn_faq);
+        contactus=v.findViewById(R.id.btncontact);
+        aboutus=v.findViewById(R.id.btn_aboutus);
+        setting=v.findViewById(R.id.btn_setting);
+        testreport=v.findViewById(R.id.btn_testreport);
+
+
+        txtptest=v.findViewById(R.id.txtpsychotest);
+        txtabout=v.findViewById(R.id.txt_aboutus);
+        txtfaq=v.findViewById(R.id.txt_faq);
+        txttestreport=v.findViewById(R.id.txttestreport);
+        txtcontact=v.findViewById(R.id.txt_contactus);
+
+    }
+    void fun()
+    {
+        // Create new fragment and transaction
+        Fragment newFragment = new StartSkillTestFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        // Replace whatever is in the fragment_container view with this fragment,
+        // and add the transaction to the back stack
+        transaction.replace(R.id.homelayout, newFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+    // TODO: Rename method, update argument and hook method into UI event
+    public void onButtonPressed(Uri uri) {
+        if (mListener != null) {
+            mListener.onFragmentInteraction(uri);
         }
-        // Adding child data
-        listDataChild.put(listDataGroup.get(0), psychometric_List);
-        listDataChild.put(listDataGroup.get(1), testReportList);
-        listDataChild.put(listDataGroup.get(2), faqList);
-        listDataChild.put(listDataGroup.get(3), contactUsList);
-        listDataChild.put(listDataGroup.get(4), aboutus_list);
-        listDataChild.put(listDataGroup.get(5), setting_List);
-        // notify the adapter
-        expandableListViewAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+//        if (context instanceof OnFragmentInteractionListener) {
+//            mListener = (OnFragmentInteractionListener) context;
+//        } else {
+//            throw new RuntimeException(context.toString()
+//                    + " must implement OnFragmentInteractionListener");
+//        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     * <p>
+     * See the Android Training lesson <a href=
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
+     * >Communicating with Other Fragments</a> for more information.
+     */
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
     }
 }

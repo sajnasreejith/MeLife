@@ -1,6 +1,8 @@
 package com.technohub.melife.activities;
 
 import android.app.ActionBar;
+import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -8,6 +10,9 @@ import com.google.android.material.snackbar.Snackbar;
 
 import android.view.View;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -33,15 +38,39 @@ public class BaseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_base);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        final DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
                 R.id.nav_tools, R.id.nav_share, R.id.nav_send)
                 .setDrawerLayout(drawer)
                 .build();
+
+
+
+//       test
+//        ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle((Activity) getApplicationContext(),drawer,R.string.app_name,R.string.app_name);
+//        mDrawerToggle.setDrawerIndicatorEnabled(false);
+//        Drawable drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_indi, getApplicationContext().getTheme());
+//        mDrawerToggle.setHomeAsUpIndicator(drawable);
+//        mDrawerToggle.setToolbarNavigationClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (drawer.isDrawerVisible(GravityCompat.START)) {
+//                    drawer.closeDrawer(GravityCompat.START);
+//                } else {
+//                    drawer.openDrawer(GravityCompat.START);
+//                }
+//            }
+//        });
+
+
+
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);

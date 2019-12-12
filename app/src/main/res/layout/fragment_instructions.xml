@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/instruction_layout"
     tools:context=".activities.ui.fragments.InstructionsFragment">
 
@@ -130,17 +131,19 @@
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_weight="0.4">
 
-            <Button
+            <com.skydoves.elasticviews.ElasticButton
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:background="@drawable/button_drawable"
                 android:text="@string/Title_proceed"
+                android:textStyle="italic"
                 android:id="@+id/btn_proceed"
-                android:textColor="@color/whiteLogocolor"
-                android:background="@drawable/button_filleddrawable"
-                android:drawableRight="@drawable/whitearow"
-                android:layout_gravity="center_horizontal|center_vertical"
-                />
-
+                android:layout_marginTop="150dp"
+                android:textColor="@color/purewhite"
+                android:textSize="17sp"
+                app:button_cornerRadius="4dp"
+                app:button_duration="250"
+                app:button_scale="0.87" />
         </LinearLayout>
 
     </LinearLayout>

@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.skydoves.elasticviews.ElasticButton;
 import com.technohub.melife.R;
 import com.technohub.melife.activities.classes.Constants;
 
@@ -37,7 +38,7 @@ public class InstructionsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     TextView titleinstruction,titleinstruction2;
-    Button proceed;
+    ElasticButton proceed;
     View v;
     private OnFragmentInteractionListener mListener;
     String title;
@@ -104,8 +105,7 @@ public class InstructionsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        titleinstruction.setText(title);
-        titleinstruction2.setText(Constants.PAGETITLE_INSTRUCTION);
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -127,9 +127,7 @@ public class InstructionsFragment extends Fragment {
     }
     void initViews()
     {
-        titleinstruction=v.findViewById(R.id.title_instruction);
-        titleinstruction2=v.findViewById(R.id.title_instruction2);
-        proceed=v.findViewById(R.id.btn_proceed);
+        proceed=(ElasticButton)v.findViewById(R.id.btn_proceed);
 
     }
     @Override

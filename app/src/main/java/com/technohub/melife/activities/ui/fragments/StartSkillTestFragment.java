@@ -65,7 +65,7 @@ public class StartSkillTestFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-                str_title = getArguments().getString(Constants.PAGETITLE_KEY);
+
         }
     }
     void fun()
@@ -102,7 +102,7 @@ public class StartSkillTestFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        titletext.setText(str_title);
+
 
     }
 

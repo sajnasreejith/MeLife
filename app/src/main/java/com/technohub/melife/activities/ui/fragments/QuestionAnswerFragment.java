@@ -203,14 +203,14 @@ public class QuestionAnswerFragment extends Fragment {
     }
     void initViews()
     {
-        timer=v.findViewById(R.id.timer);
+        timer=v.findViewById(R.id.examtimer);
         answera=v.findViewById(R.id.answera);
         answerb=v.findViewById(R.id.answerb);
         answerc=v.findViewById(R.id.answerc);
         answerd=v.findViewById(R.id.answerd);
         answere=v.findViewById(R.id.answere);
-        pagetitle1=v.findViewById(R.id.title_qa1);
-        pagetitle2=v.findViewById(R.id.title_qa2);
+        pagetitle1=v.findViewById(R.id.titlequestion1);
+        pagetitle2=v.findViewById(R.id.titlequestion2);
         btnnext=v.findViewById(R.id.btn_next);
         Question=v.findViewById(R.id.txtQuestion);
         Qno=v.findViewById(R.id.txtQno);

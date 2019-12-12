@@ -7,14 +7,9 @@
         android:topLeftRadius="11dip"
         android:bottomRightRadius="11dip"
         />
-
     <gradient
-
-        android:startColor="@color/whiteLogocolor"
-
-        android:endColor="@color/lightblue"
-
+        android:startColor="@color/lightblue"
+        android:endColor="@color/purewhite"
         android:type="linear"
-
         android:angle="270"/>
 </shape>

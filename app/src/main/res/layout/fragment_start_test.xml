@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/starttestlayout"
     tools:context=".activities.ui.fragments.StartSkillTestFragment">
 
@@ -18,53 +19,53 @@ android:layout_height="match_parent"
     android:layout_gravity="center_horizontal|center_vertical"
     android:orientation="vertical"
     android:layout_weight="0.2">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_gravity="center_horizontal|center_vertical"
-        android:orientation="horizontal"
-        android:background="@drawable/listview_shading"
-     >
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:paddingLeft="20dp"
-            android:layout_gravity="center"
-            android:src="@drawable/right" />
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textColor="@color/lightblue"
-            android:textStyle="bold"
-            android:paddingLeft="10dp"
-            android:layout_gravity="center"
-           />
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_gravity="center_horizontal|center_vertical"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:background="@drawable/listview_shading"-->
+<!--     >-->
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:paddingLeft="20dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:src="@drawable/right" />-->
+<!--        <TextView-->
+<!--            android:id="@+id/title"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:textSize="20dp"-->
+<!--            android:textColor="@color/lightblue"-->
+<!--            android:textStyle="bold"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:layout_gravity="center"-->
+<!--           />-->
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:paddingLeft="10dp"
-            android:layout_gravity="center"
-            android:src="@drawable/right" />
-    </LinearLayout>
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="3dp"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:src="@drawable/right" />-->
+<!--    </LinearLayout>-->
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_marginTop="130dp"
         android:layout_gravity="center_horizontal|center_vertical"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:id="@+id/skillimage"
-        android:src="@drawable/skillicon"/>
+        android:src="@drawable/iconpsycho"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/skillimage"
         android:textSize="25dp"
-        android:textStyle="bold"
+        android:textStyle="bold|italic"
         android:id="@+id/skill_title"
         android:layout_gravity="center_horizontal|center_vertical"
         android:layout_marginTop="20dp"
@@ -78,15 +79,19 @@ android:layout_height="match_parent"
         android:layout_gravity="center_horizontal|center_vertical"
         android:layout_weight="0.4">
 
-        <Button
-            android:id="@+id/btn_starttest"
+        <com.skydoves.elasticviews.ElasticButton
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
+            android:background="@drawable/button_drawable"
             android:text="@string/Title_starttest"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:background="@drawable/button_filleddrawable"
-            android:drawableRight="@drawable/whitearow"
-            android:textColor="@color/whiteLogocolor" />
+            android:textStyle="italic"
+            android:id="@+id/btn_starttest"
+            android:layout_marginTop="150dp"
+            android:textColor="@color/purewhite"
+            android:textSize="17sp"
+            app:button_cornerRadius="4dp"
+            app:button_duration="250"
+            app:button_scale="0.87" />
     </LinearLayout>
 
 </LinearLayout>
