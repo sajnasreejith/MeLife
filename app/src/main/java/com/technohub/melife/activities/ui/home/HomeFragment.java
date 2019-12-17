@@ -1,6 +1,7 @@
 package com.technohub.melife.activities.ui.home;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,7 +20,7 @@ import com.technohub.melife.R;
 import com.technohub.melife.activities.classes.Constants;
 import com.technohub.melife.activities.ui.fragments.InstructionsFragment;
 import com.technohub.melife.activities.ui.fragments.StartSkillTestFragment;
-
+import com.technohub.melife.activities.ui.fragments.ViewTestReportFragment;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -40,7 +41,8 @@ public class HomeFragment extends Fragment {
         View v;
     Animation animBounce;
     ImageView ptest,faq,setting,contactus,aboutus,testreport;
-    CardView txtptest,txtfaq,txtcontact,txtabout,txtsetting,txttestreport;
+    CardView txtptest,txtfaq,txtcontact,txtabout,txtset,txttestreport;
+    TextView tviewptest;
     private OnFragmentInteractionListener mListener;
 
     public HomeFragment() {
@@ -77,7 +79,9 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         v=inflater.inflate(R.layout.fragment_home_fragment_new, container, false);
+        v.setBackgroundColor(Color.WHITE);
                                 initView();
         animBounce = AnimationUtils.loadAnimation(getContext(),
                 R.anim.bounce_animation);
@@ -87,16 +91,16 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 ptest.startAnimation(animBounce);
                 fun();
-//                txtptest.setCardBackgroundColor(R.drawable.button_drawable);
+                txtptest.setCardBackgroundColor(Color.CYAN);
             }
         });
-
 
         faq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 faq.startAnimation(animBounce);
-//                txtfaq.setCardBackgroundColor(R.drawable.button_drawable);
+//                txtfaq.setCardBackgroundColor(Color.CYAN);
+
             }
         });
 
@@ -105,6 +109,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 contactus.startAnimation(animBounce);
+//                txtcontact.setCardBackgroundColor(Color.CYAN);
 //                txtcontact.setCardBackgroundColor(R.drawable.button_drawable);
             }
         });
@@ -113,6 +118,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 setting.startAnimation(animBounce);
+//                txtsetting.setCardBackgroundColor(Color.CYAN);
 //                txtsetting.setCardBackgroundColor(R.drawable.button_drawable);
             }
         });
@@ -121,13 +127,16 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 testreport.startAnimation(animBounce);
-                txttestreport.setCardBackgroundColor(R.drawable.button_drawable);
+                fun2();
+                txttestreport.setCardBackgroundColor(Color.CYAN);
+//                txttestreport.setCardBackgroundColor(R.drawable.button_drawable);
             }
         });
         aboutus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 aboutus.startAnimation(animBounce);
+//                txtabout.setCardBackgroundColor(Color.CYAN);
 //                txtabout.setCardBackgroundColor(R.drawable.button_drawable);
             }
         });
@@ -136,6 +145,7 @@ public class HomeFragment extends Fragment {
 
     void initView()
     {
+//        buttond
         ptest=v.findViewById(R.id.btn_psychotest);
         faq=v.findViewById(R.id.btn_faq);
         contactus=v.findViewById(R.id.btncontact);
@@ -143,21 +153,42 @@ public class HomeFragment extends Fragment {
         setting=v.findViewById(R.id.btn_setting);
         testreport=v.findViewById(R.id.btn_testreport);
 
-
+//cardviews
         txtptest=v.findViewById(R.id.txtpsychotest);
         txtabout=v.findViewById(R.id.txt_aboutus);
         txtfaq=v.findViewById(R.id.txt_faq);
         txttestreport=v.findViewById(R.id.txttestreport);
         txtcontact=v.findViewById(R.id.txt_contactus);
+        txtset=v.findViewById(R.id.txtsetting);
+//        textview
 
+        tviewptest=v.findViewById(R.id.tviewptest);
     }
     void fun()
     {
         // Create new fragment and transaction
+
         Fragment newFragment = new StartSkillTestFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         // Replace whatever is in the fragment_container view with this fragment,
         // and add the transaction to the back stack
+//        Bundle args = new Bundle();
+//        args.putString(Constants.PAGETITLE_KEY,tviewptest.getText().toString() );
+//        newFragment.setArguments(args);
+        transaction.replace(R.id.homelayout, newFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+    void fun2()
+    {
+        // Create new fragment and transaction
+        Fragment newFragment = new ViewTestReportFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        // Replace whatever is in the fragment_container view with this fragment,
+        // and add the transaction to the back stack
+        Bundle args = new Bundle();
+        args.putString(Constants.PAGETITLE_KEY,tviewptest.getText().toString() );
+        newFragment.setArguments(args);
         transaction.replace(R.id.homelayout, newFragment);
         transaction.addToBackStack(null);
         transaction.commit();
@@ -184,6 +215,12 @@ public class HomeFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
     }
 
     /**

@@ -5,14 +5,20 @@ import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -20,6 +26,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 import com.technohub.melife.R;
+import com.technohub.melife.activities.ui.home.HomeFragment;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -40,6 +47,7 @@ public class BaseActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         final DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        BottomNavigationView navView = findViewById(R.id.bottom_nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
 
@@ -52,30 +60,54 @@ public class BaseActivity extends AppCompatActivity {
 
 
 
-//       test
-//        ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle((Activity) getApplicationContext(),drawer,R.string.app_name,R.string.app_name);
-//        mDrawerToggle.setDrawerIndicatorEnabled(false);
-//        Drawable drawable = ResourcesCompat.getDrawable(getResources(), R.drawable.icon_indi, getApplicationContext().getTheme());
-//        mDrawerToggle.setHomeAsUpIndicator(drawable);
-//        mDrawerToggle.setToolbarNavigationClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (drawer.isDrawerVisible(GravityCompat.START)) {
-//                    drawer.closeDrawer(GravityCompat.START);
-//                } else {
-//                    drawer.openDrawer(GravityCompat.START);
-//                }
-//            }
-//        });
-
 
 
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-    }
 
+//        botton navigatiomn
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.navigation_home, R.id.navigation_loc, R.id.navigation_like, R.id.navigation_user).build();
+        NavController navController1 = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController1, appBarConfiguration);
+        NavigationUI.setupWithNavController(navView, navController1);
+
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navView.setSelectedItemId(R.id.navigation_home);
+
+    }
+    Fragment fragment = null;
+    FragmentTransaction fragmentTransaction;
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    return true;
+                case R.id.navigation_loc:
+                    fragment = new HomeFragment();
+                    switchFragment(fragment);
+                    return true;
+                case R.id.navigation_like:
+                    fragment = new HomeFragment();
+                    switchFragment(fragment);
+                    return true;
+            }
+            return false;
+        }
+    };
+
+
+    private void switchFragment(Fragment fragment) {
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.main, fragment);
+        fragmentTransaction.commit();
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

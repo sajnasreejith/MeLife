@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/reportlayout"
+    tools:context=".activities.ui.fragments.ReportFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/userdata" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:lineSpacingExtra="5dp"
+            android:text="Skill ﬁnder test is designed to identify your interests and multiple intelligence. It will help you to ﬁnd the skills already developed in you and to identify the skills to be developed based on your interests. This test report will map out your interest areas and multiple intelligences and provide you with suggestions on which career ﬁeld you can ﬂourish. "
+            android:textColor="@color/darkblue" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/bluedrawable"
+            android:gravity="center"
+            android:text="IDENTIFY SKILLS BASED ON YOUR INTERESTS"
+            android:textColor="@color/whiteLogocolor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="50dp"
+            android:lineSpacingExtra="5dp"
+            android:text="»  This test report will help you to identify your interests and multiple intelligences "
+            android:textColor="@color/darkblue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:lineSpacingExtra="5dp"
+            android:text="»  This test report will help you to identify your interests and multiple intelligences "
+            android:textColor="@color/darkblue"  />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:lineSpacingExtra="5dp"
+            android:text="»  This test report will help you to identify your interests and multiple intelligences "
+            android:textColor="@color/darkblue"  />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:lineSpacingExtra="5dp"
+            android:text="»  This test report will help you to identify your interests and multiple intelligences "
+            android:textColor="@color/darkblue"  />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:lineSpacingExtra="5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:text="»  This test report will help you to identify your interests and multiple intelligences "
+            android:textColor="@color/darkblue"  />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal|clip_vertical"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bluedrawable"
+            android:text="WHAT IS INTEREST?"
+            android:textColor="@color/whiteLogocolor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:lineSpacingExtra="7dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:text="Interests refer to an individual’s preference for engaging in one or more speciﬁc activities relative to others. It involves the activities that excites and gives you enjoyment, including what you like to watch, shows you like to attend, and the kind of people you admire and like to be with. Interests reﬂect a person’s preferences, attitudes, values, talents, and qualities. Interest is important in choosing a career because interest keeps you motivated and engaged in your work. Since you spend most of your time during a day and week at the workplace; if you have no interest in what you are doing, it can adversely aﬀect your personal life."
+            android:textColor="@color/darkblue" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/bluedrawable"
+            android:gravity="center"
+            android:text="IDENTIFY SKILLS BASED ON YOUR INTERESTS"
+            android:textColor="@color/whiteLogocolor" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/graph" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+
+            android:text="TABLE SHOWING SCORES IN INTEREST AREAS"
+            android:textColor="@color/darkblue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="SUGGESTED CAREER "
+            android:textColor="@color/darkblue" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/first" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:lineSpacingExtra="7dp"
+            android:text="Wellness and sports activity has long been used as a tool to improve mental, physical and social well-being. Each day we work to maximize our dimension of wellbeing and comfort to live long with healthy lives. The wellness sector in India has quickly advanced from a highly unstructured ecosystem in the 90s to a more active and developing sector of today. As this industry become mainstream, there expects a massive boom in the coming years. The beauty business in India becomes triple in the next WELLNESS  "
+            android:textColor="@color/darkblue" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/second" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:layout_marginTop="30dp"
+            android:lineSpacingExtra="7dp"
+            android:text="Public administration concerns policy formulation and implementation and management of public aﬀairs by competent civil servants who constitute public services or civil services. Public administration is essential for executing government orders and functions. A whole range of new career opportunities can be taken up in this sector.
+    "
+            android:textColor="@color/darkblue" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:lineSpacingExtra="7dp"
+            android:background="@drawable/bluedrawable"
+            android:gravity="center"
+            android:text="TAKING ACTION"
+            android:textColor="@color/whiteLogocolor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:lineSpacingExtra="7dp"
+            android:text="This assessment report gives understanding of your interest areas, multiple intelligences, career ﬁelds you are good at, and the description of career ﬁelds. Based on this information you can explore and get a job that gives you happiness and satisfaction.
+      "
+            android:textColor="@color/darkblue" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:background="@drawable/bluedrawable"
+            android:text="Consult a career counselor  "
+            android:textColor="@color/whiteLogocolor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:lineSpacingExtra="7dp"
+            android:text="Career counselor plays an important role in accurately interpreting the psychometric test result. Assessment tests are surely beneﬁcial, but ultimately it has to be your own choice by considering all factors in selecting a career and/or course-discipline. Career counselors can help sort out these issues. Career counselor provides guidance in setting goal and preparing an action plan based on the results obtained by the student in the psychometric test. Career counselors always keep the information obtained from the tests conﬁdential.
+    "
+            android:textColor="@color/darkblue" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:lineSpacingExtra="7dp"
+            android:background="@drawable/bluedrawable"
+            android:text="Create a career development plan "
+            android:textColor="@color/whiteLogocolor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:text="Read and gain knowledge about your career or ﬁeld of interest by asking yourself and analyzing the test report. Seek advice from career counselor, family, friends, and teachers to create a career development plan.
+
+    "
+            android:layout_marginTop="30dp"
+            android:textColor="@color/darkblue"
+            android:lineSpacingExtra="7dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bluedrawable"
+            android:text="Seek advice from your career coach"
+            android:textColor="@color/whiteLogocolor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:lineSpacingExtra="7dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:text="Seek advice from your career coach to get a more broad view on careers.
+    "
+            android:textColor="@color/darkblue" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Start networking "
+            android:background="@drawable/bluedrawable"
+            android:textColor="@color/whiteLogocolor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:lineSpacingExtra="7dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+            android:text="Networking is about developing lasting relationships for mutual gain and creating a long-lasting favorable impression with people so they may think of you when an opportunity arises.” Networking starts with a mindset and an intention to discover, explore, and be open to what you may encounter. It helps building mutually beneﬁcial relationships with people of inﬂuence. It enables you to stand out from the crowd.
+    Skill Finder Test is a standard and scientiﬁc method designed to measure an individual’s suitability for a role/career based on his/her interests, skills, multiple intelligences and other related factors. This test can evaluate an individual and provide an objective measure of his/her interests or career preferences. It is constructed by following the psychometric testing guidelines and scientiﬁcally proven theories and it is scientiﬁcally validated and standardized. This test is suitable for the Indian context.
+    "
+            android:textColor="@color/darkblue" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="download"
+                android:textColor="@color/darkblue" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/download" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+</ScrollView>

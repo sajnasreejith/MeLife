@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/instruction_layout"
+    android:orientation="vertical"
+    >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/Title_instrction"
+                android:textColor="@color/darkblue"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:lineSpacingExtra="3dp"
+                android:text="@string/instructions"
+                android:textColor="@color/darkblue"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/style_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/answera" />
+
+            <TextView
+                style="@style/style_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/answerb" />
+
+            <TextView
+                style="@style/style_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/answerc" />
+
+            <TextView
+                style="@style/style_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/answerd" />
+
+            <TextView
+                style="@style/style_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/answere" />
+
+            <CheckBox
+                style="@style/style_answer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:buttonTint="@color/darkblue"
+                android:text="@string/terms"
+
+                />
+
+            <com.skydoves.elasticviews.ElasticButton
+                android:layout_width="135dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="55dp"
+                android:background="@drawable/button_drawable"
+                android:text="@string/Title_proceed"
+                android:textStyle="italic"
+                android:id="@+id/btn_proceed"
+                android:layout_marginTop="40dp"
+                android:textColor="@color/darkblue"
+                android:textSize="17sp"
+                app:button_cornerRadius="4dp"
+                app:button_duration="250"
+                app:button_scale="0.87" />
+
+    </LinearLayout>
+</FrameLayout>

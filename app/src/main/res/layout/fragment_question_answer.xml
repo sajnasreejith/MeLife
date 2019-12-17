@@ -7,64 +7,11 @@
     tools:context=".activities.ui.fragments.QuestionAnswerFragment">
     <LinearLayout
         android:orientation="vertical"
-        android:gravity="center_horizontal|center_vertical"
+        android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:orientation="horizontal"
-            android:background="@drawable/listview_shading"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:paddingLeft="20dp"
-                android:layout_gravity="center"
-                android:src="@drawable/right" />
-            <TextView
-                android:id="@+id/titlequestion1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textColor="@color/lightblue"
-                android:textStyle="bold"
-                android:paddingLeft="10dp"
-                android:layout_gravity="center"
-                />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
-                android:paddingLeft="10dp"
-                android:layout_gravity="center"
-                android:src="@drawable/right" />
-            <TextView
-                android:id="@+id/titlequestion2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textColor="@color/lightblue"
-                android:textStyle="bold"
-                android:paddingLeft="10dp"
-                android:layout_gravity="center"
-                />
-            <TextView
-                android:id="@+id/examtimer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textColor="@color/lightblue"
-                android:textStyle="bold"
-                android:paddingLeft="30dp"
-                android:gravity="right"
-                android:layout_marginTop="20dp"
-                />
-        </LinearLayout>
 <!--        <LinearLayout-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->
@@ -80,22 +27,21 @@
 <!--                android:text="@string/Title_Qno"/>-->
 <!--        </LinearLayout>-->
         <LinearLayout
-            android:layout_width="330dp"
-
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
             android:orientation="vertical"
-            android:layout_weight="0.3">
+           >
             <LinearLayout
                 android:layout_width="330dp"
-
-                android:layout_height="wrap_content">
+                android:orientation="horizontal"
+                android:layout_height="wrap_content"
+               >
             <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="20dp"
-                            android:gravity="center"
-                            android:textSize="20dp"
+                            android:textSize="15dp"
                             android:textStyle="bold"
                             android:textColor="@color/darkblue"
                             android:text="@string/Title_Qno"/>
@@ -103,9 +49,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:gravity="center"
                 android:paddingLeft="5dp"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:textStyle="bold"
                 android:id="@+id/txtQno"
                 android:textColor="@color/darkblue"
@@ -115,7 +60,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:gravity="center"
                 android:textSize="17dp"
                 android:id="@+id/txtQuestion"
                 android:textColor="@color/darkblue"
@@ -145,20 +89,20 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="145dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_weight="0.4">
+         >
 
-            <Button
-                android:id="@+id/btn_next"
-                android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:background="@drawable/button_filleddrawable"
-                android:drawableRight="@drawable/whitearow"
-                android:text="@string/Title_next"
-                android:textColor="@color/whiteLogocolor" />
+<!--            <com.skydoves.elasticviews.ElasticButton-->
+<!--                android:id="@+id/btn_next"-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_horizontal|center_vertical"-->
+<!--                android:background="@drawable/button_drawable"-->
+<!--                android:text="@string/Title_next"-->
+<!--                android:textColor="@color/darkblue" />-->
         </LinearLayout>
 
     </LinearLayout>

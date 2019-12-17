@@ -17,14 +17,14 @@ public class ChooseLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_choose_login);
-        ElasticButton login,signup;
+        ElasticButton login;
 //        login=(ElasticButton)findViewById(R.id.login) ;
-        signup=(ElasticButton)findViewById(R.id.signup) ;
+        login=(ElasticButton)findViewById(R.id.btn_signin) ;
 
-        signup.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), SignUpScreen.class));
+                startActivity(new Intent(getApplicationContext(), LoginScreen.class));
             }
         });
 

@@ -106,9 +106,7 @@
     <!--instructions-->
     <string name="Title_instrction">Please read the instructions carefully</string>
     <string name="instructions">
-       This section contains 42 statements which contain the work/things you
-        are interested to do in your life, Please mark your interest in each activity shown from the alternatives oﬀered. Go by your ﬁrst reaction and answer each question honestly. Simply think about whether you would enjoy doing it or not. Read the instructions carefully and provide with honest and reliable responses for the questions. There is no right or wrong answers. You may choose the response that most appropriately suits you.
-A. Like extremely B. Like very much C. Neutral D. Dislike very much E. Dislike extremely
+ This section contains 42 statements which contain the work/things you are interested to do in your life. Go by your ﬁrst reaction and answer each question honestly. Simply think about whether you would enjoy doing it or not. Read the instructions carefully and provide with honest and reliable responses for the questions. You may choose the response that most appropriately suits you.
     </string>
     <string name="answera">A. Like extremely </string>
     <string name="answerb">B. Like very much </string>

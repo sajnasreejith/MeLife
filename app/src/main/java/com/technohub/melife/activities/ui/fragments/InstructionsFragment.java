@@ -37,11 +37,11 @@ public class InstructionsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    TextView titleinstruction,titleinstruction2;
+//    TextView titleinstruction,titleinstruction2;
     ElasticButton proceed;
     View v;
     private OnFragmentInteractionListener mListener;
-    String title;
+//    String title;
     public InstructionsFragment() {
         // Required empty public constructor
     }
@@ -68,8 +68,8 @@ public class InstructionsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            title = getArguments().getString(Constants.PAGETITLE_KEY);
-            Log.e("title",title);
+//            title = getArguments().getString(Constants.PAGETITLE_KEY);
+//            Log.e("title",title);
         }
     }
 
@@ -77,7 +77,7 @@ public class InstructionsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-         v=inflater.inflate(R.layout.fragment_instructions, container, false);
+         v=inflater.inflate(R.layout.fragment_instructn, container, false);
          initViews();
          v.setBackgroundColor(Color.WHITE);
          proceed.setOnClickListener(new View.OnClickListener() {
@@ -93,9 +93,9 @@ public class InstructionsFragment extends Fragment {
         // Create new fragment and transaction
         Fragment newFragment = new QuestionAnswerFragment();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        Bundle args = new Bundle();
-        args.putString(Constants.PAGETITLE_KEY,titleinstruction.getText().toString());
-        newFragment.setArguments(args);
+//        Bundle args = new Bundle();
+//        args.putString(Constants.PAGETITLE_KEY,titleinstruction.getText().toString());
+//        newFragment.setArguments(args);
         // Replace whatever is in the fragment_container view with this fragment,
         // and add the transaction to the back stack
         transaction.replace(R.id.instruction_layout, newFragment);
@@ -105,7 +105,8 @@ public class InstructionsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
+//            titleinstruction.setText(title);
+//            titleinstruction2.setText(Constants.PAGETITLE_INSTRUCTION);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -127,8 +128,9 @@ public class InstructionsFragment extends Fragment {
     }
     void initViews()
     {
-        proceed=(ElasticButton)v.findViewById(R.id.btn_proceed);
-
+//        titleinstruction=v.findViewById(R.id.title_instruction);
+//        titleinstruction2=v.findViewById(R.id.title_instruction2);
+         proceed=(ElasticButton)v.findViewById(R.id.btn_proceed);
     }
     @Override
     public void onDetach() {

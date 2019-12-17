@@ -1,16 +1,21 @@
 package com.technohub.melife.activities.ui.fragments;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import com.skydoves.elasticviews.ElasticButton;
 import com.technohub.melife.R;
+import com.technohub.melife.activities.classes.Constants;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,8 +32,11 @@ public class ViewTestReportFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+//    private String title;
+//    private String mParam2;
+    ElasticButton viewRep;
+//    TextView txt_title,txt_skilltitle;
+    View v;
 
     private OnFragmentInteractionListener mListener;
 
@@ -58,8 +66,8 @@ public class ViewTestReportFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+//            title = getArguments().getString(Constants.PAGETITLE_KEY);
+
         }
     }
 
@@ -67,7 +75,18 @@ public class ViewTestReportFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_view_test_report, container, false);
+        v=inflater.inflate(R.layout.fragment_view_test_report, container, false);
+        v.setBackgroundColor(Color.WHITE);
+        viewRep=(ElasticButton)v.findViewById(R.id.btn_viewreport);
+//        txt_skilltitle=v.findViewById(R.id.skill_title);
+//        txt_title=v.findViewById(R.id.viewrep_title);
+        viewRep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                        fun();
+            }
+        });
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -78,14 +97,34 @@ public class ViewTestReportFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+//        txt_title.setText(title);
+    }
+
+    void fun()
+    {
+        // Create new fragment and transaction
+        Fragment newFragment = new ReportFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        // Replace whatever is in the fragment_container view with this fragment,
+        // and add the transaction to the back stack
+//        Bundle args = new Bundle();
+//        args.putString(Constants.PAGETITLE_KEY,txt_skilltitle.getText().toString());
+//        newFragment.setArguments(args);
+        transaction.replace(R.id.viewreportlayout, newFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+    @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+//        if (context instanceof OnFragmentInteractionListener) {
+//            mListener = (OnFragmentInteractionListener) context;
+//        } else {
+//            throw new RuntimeException(context.toString()
+//                    + " must implement OnFragmentInteractionListener");
+//        }
     }
 
     @Override

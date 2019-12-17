@@ -16,6 +16,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.skydoves.elasticviews.ElasticButton;
+import com.technohub.melife.Authentication.LoginScreen;
 import com.technohub.melife.R;
 import com.technohub.melife.activities.classes.Constants;
 import com.technohub.melife.activities.ui.viewmodels.SharedViewModel;
@@ -35,7 +37,8 @@ public class StartSkillTestFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
      TextView titletext,skilltitle;
     // TODO: Rename and change types of parameters
-    private String str_title;
+//    private String ptesttitle;
+    ElasticButton starttest;
     private OnFragmentInteractionListener mListener;
 
     View v;
@@ -65,7 +68,8 @@ public class StartSkillTestFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-
+//            ptesttitle = getArguments().getString(Constants.PAGETITLE_KEY);
+//            Log.e("tit",ptesttitle);
         }
     }
     void fun()
@@ -75,9 +79,9 @@ public class StartSkillTestFragment extends Fragment {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         // Replace whatever is in the fragment_container view with this fragment,
         // and add the transaction to the back stack
-        Bundle args = new Bundle();
-        args.putString(Constants.PAGETITLE_KEY,skilltitle.getText().toString());
-        newFragment.setArguments(args);
+//        Bundle args = new Bundle();
+//        args.putString(Constants.PAGETITLE_KEY,skilltitle.getText().toString());
+//        newFragment.setArguments(args);
         transaction.replace(R.id.starttestlayout, newFragment);
         transaction.addToBackStack(null);
         transaction.commit();
@@ -89,7 +93,7 @@ public class StartSkillTestFragment extends Fragment {
         v=inflater.inflate(R.layout.fragment_start_test, container, false);
         v.setBackgroundColor(Color.WHITE);
         initViews();
-        v.findViewById(R.id.btn_starttest).setOnClickListener(new View.OnClickListener() {
+       starttest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                                 fun();
@@ -102,8 +106,7 @@ public class StartSkillTestFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
-
+//        titletext.setText(ptesttitle);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -115,6 +118,7 @@ public class StartSkillTestFragment extends Fragment {
 
     void initViews()
     {
+        starttest=(ElasticButton) v.findViewById(R.id.btn_starttest);
         titletext=v.findViewById(R.id.title);
         skilltitle=v.findViewById(R.id.skill_title);
     }

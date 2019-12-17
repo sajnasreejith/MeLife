@@ -15,6 +15,7 @@ public class LoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loginpage);
+        getSupportActionBar().hide();
         findViewById(R.id.btn_signin).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
