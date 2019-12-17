@@ -11,14 +11,12 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.technohub.melife.R;
-import com.technohub.melife.activities.BaseActivity;
 import com.technohub.melife.activities.classes.Constants;
 import com.technohub.melife.activities.ui.fragments.InstructionsFragment;
 import com.technohub.melife.activities.ui.fragments.StartSkillTestFragment;
@@ -31,7 +29,7 @@ import com.technohub.melife.activities.ui.fragments.ViewTestReportFragment;
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment implements BaseActivity.OnBackPressedListner{
+public class HomeFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -76,9 +74,6 @@ public class HomeFragment extends Fragment implements BaseActivity.OnBackPressed
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-    }
-    public void callParentMethod(){
-        getActivity().onBackPressed();
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -149,7 +144,6 @@ public class HomeFragment extends Fragment implements BaseActivity.OnBackPressed
         return v;
     }
 
-
     void initView()
     {
 //        buttond
@@ -171,6 +165,7 @@ public class HomeFragment extends Fragment implements BaseActivity.OnBackPressed
 
         tviewptest=v.findViewById(R.id.tviewptest);
     }
+
     void fun()
     {
         // Create new fragment and transaction
@@ -185,6 +180,9 @@ public class HomeFragment extends Fragment implements BaseActivity.OnBackPressed
         transaction.replace(R.id.homelayout, newFragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+    public void callParentMethod(){
+        getActivity().onBackPressed();
     }
     void fun2()
     {
@@ -223,11 +221,7 @@ public class HomeFragment extends Fragment implements BaseActivity.OnBackPressed
         super.onDetach();
         mListener = null;
     }
-    @Override
-    public boolean onBackPressed() {
-        Toast.makeText(getActivity(),"OnBackpress Click",Toast.LENGTH_LONG).show();
-        return false;
-    }
+
     @Override
     public void onResume() {
         super.onResume();

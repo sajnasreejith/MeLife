@@ -31,8 +31,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-
-
             android:lineSpacingExtra="5dp"
             android:text="Skill ﬁnder test is designed to identify your interests and multiple intelligence. It will help you to ﬁnd the skills already developed in you and to identify the skills to be developed based on your interests. This test report will map out your interest areas and multiple intelligences and provide you with suggestions on which career ﬁeld you can ﬂourish. "
             android:textColor="@color/darkblue" />
@@ -48,52 +46,43 @@
             android:textColor="@color/whiteLogocolor" />
 
         <com.codesgood.views.JustifiedTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
             android:layout_marginTop="50dp"
             android:lineSpacingExtra="5dp"
             android:text="»  This test report will help you to identify your interests and multiple intelligences "
             android:textColor="@color/darkblue" />
 
         <com.codesgood.views.JustifiedTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
+
             android:lineSpacingExtra="5dp"
             android:text="»  This test report will help you to identify your interests and multiple intelligences "
             android:textColor="@color/darkblue"  />
 
         <com.codesgood.views.JustifiedTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
             android:lineSpacingExtra="5dp"
             android:text="»  This test report will help you to identify your interests and multiple intelligences "
             android:textColor="@color/darkblue"  />
 
         <com.codesgood.views.JustifiedTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
             android:lineSpacingExtra="5dp"
             android:text="»  This test report will help you to identify your interests and multiple intelligences "
             android:textColor="@color/darkblue"  />
 
         <com.codesgood.views.JustifiedTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:lineSpacingExtra="5dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
             android:text="»  This test report will help you to identify your interests and multiple intelligences "
             android:textColor="@color/darkblue"  />
 
@@ -108,7 +97,7 @@
             android:textColor="@color/whiteLogocolor" />
 
         <com.codesgood.views.JustifiedTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:lineSpacingExtra="7dp"
@@ -154,12 +143,11 @@
             android:src="@drawable/first" />
 
         <com.codesgood.views.JustifiedTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
+
             android:lineSpacingExtra="7dp"
             android:text="Wellness and sports activity has long been used as a tool to improve mental, physical and social well-being. Each day we work to maximize our dimension of wellbeing and comfort to live long with healthy lives. The wellness sector in India has quickly advanced from a highly unstructured ecosystem in the 90s to a more active and developing sector of today. As this industry become mainstream, there expects a massive boom in the coming years. The beauty business in India becomes triple in the next WELLNESS  "
             android:textColor="@color/darkblue" />
@@ -170,7 +158,7 @@
             android:src="@drawable/second" />
 
         <com.codesgood.views.JustifiedTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
@@ -190,7 +178,7 @@
             android:textColor="@color/whiteLogocolor" />
 
         <com.codesgood.views.JustifiedTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
@@ -211,7 +199,7 @@
             android:textColor="@color/whiteLogocolor" />
 
         <com.codesgood.views.JustifiedTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
@@ -252,7 +240,7 @@
             android:textColor="@color/whiteLogocolor" />
 
         <com.codesgood.views.JustifiedTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginTop="30dp"
@@ -272,7 +260,7 @@
             android:textColor="@color/whiteLogocolor" />
 
         <com.codesgood.views.JustifiedTextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"

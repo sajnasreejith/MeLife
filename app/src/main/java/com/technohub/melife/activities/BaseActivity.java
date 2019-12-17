@@ -27,6 +27,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.navigation.NavigationView;
 import com.technohub.melife.R;
 import com.technohub.melife.activities.ui.fragments.QuestionAnswerFragment;
+import com.technohub.melife.activities.ui.fragments.ReportFragment;
 import com.technohub.melife.activities.ui.home.HomeFragment;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -38,7 +39,7 @@ import android.view.Menu;
 
 import java.util.List;
 
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -62,10 +63,6 @@ public class BaseActivity extends AppCompatActivity {
                 .build();
 
 
-
-
-
-
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
@@ -77,40 +74,52 @@ public class BaseActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController1, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController1);
 
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        navView.setSelectedItemId(R.id.navigation_home);
+        loadFragment(new HomeFragment());
 
+        navView.setOnNavigationItemSelectedListener(this);
     }
-    Fragment fragment = null;
-    FragmentTransaction fragmentTransaction;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+
+
+
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment fragment = null;
+
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    return true;
+                    fragment = new HomeFragment();
+                    break;
+
                 case R.id.navigation_loc:
-                    fragment = new HomeFragment();
-                    switchFragment(fragment);
-                    return true;
+//                    fragment = new DashboardFragment();
+                    break;
+
                 case R.id.navigation_like:
-                    fragment = new HomeFragment();
-                    switchFragment(fragment);
-                    return true;
+//                    fragment = new NotificationsFragment();
+                    break;
+
+                case R.id.navigation_user:
+                    fragment = new ReportFragment();
+                    break;
             }
-            return false;
+
+            return loadFragment(fragment);
         }
-    };
-
-
-    private void switchFragment(Fragment fragment) {
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.homelayout, fragment);
-        fragmentTransaction.commit();
+    private boolean loadFragment(Fragment fragment) {
+        //switching fragment
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.homelayout, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -123,9 +132,7 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
-    public interface OnBackPressedListner{
-        boolean onBackPressed();
-    }
+
 
     @Override
     public boolean onSupportNavigateUp() {
