@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bluescreen"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/starttestlayout"
     tools:context=".activities.ui.fragments.StartSkillTestFragment">
 
 <LinearLayout
-android:orientation="vertical" android:gravity="center_horizontal|center_vertical"
+android:orientation="vertical"
+    android:gravity="center_horizontal|center_vertical"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
     >
@@ -27,19 +27,20 @@ android:layout_height="match_parent"
         android:layout_gravity="center_horizontal|center_vertical"
         android:layout_height="150dp"
         android:id="@+id/skillimage"
-        android:src="@drawable/iconpsycho"/>
+        android:src="@drawable/skill"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/skillimage"
         android:textSize="25dp"
-        android:textStyle="bold|italic"
+        android:typeface="serif"
+        android:textStyle="bold"
         android:id="@+id/skill_title"
         android:layout_gravity="center_horizontal|center_vertical"
         android:layout_marginTop="20dp"
         android:text="@string/Title_skilltest"
-        android:textColor="@color/darkblue" />
+        android:textColor="@color/themecolor" />
 </LinearLayout>
 
     <LinearLayout
@@ -53,7 +54,7 @@ android:layout_height="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/button_drawable"
             android:text="@string/Title_starttest"
-            android:textStyle="italic"
+            android:typeface="serif"
             android:id="@+id/btn_starttest"
             android:layout_marginTop="40dp"
             android:textColor="@color/darkblue"

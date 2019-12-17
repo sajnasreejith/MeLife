@@ -26,6 +26,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 import com.technohub.melife.R;
+import com.technohub.melife.activities.ui.fragments.QuestionAnswerFragment;
 import com.technohub.melife.activities.ui.home.HomeFragment;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -34,6 +35,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+
+import java.util.List;
 
 public class BaseActivity extends AppCompatActivity {
 
@@ -105,7 +108,7 @@ public class BaseActivity extends AppCompatActivity {
 
     private void switchFragment(Fragment fragment) {
         fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.main, fragment);
+        fragmentTransaction.replace(R.id.homelayout, fragment);
         fragmentTransaction.commit();
     }
     @Override
@@ -113,6 +116,15 @@ public class BaseActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.base, menu);
         return true;
+    }
+
+    @Override
+    public void onBackPressed(){
+
+    }
+
+    public interface OnBackPressedListner{
+        boolean onBackPressed();
     }
 
     @Override

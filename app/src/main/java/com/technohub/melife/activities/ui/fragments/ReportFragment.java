@@ -75,11 +75,14 @@ public class ReportFragment extends Fragment {
         // Inflate the layout for this fragment
          v=inflater.inflate(R.layout.fragment_report, container, false);;
          v.setBackgroundColor(Color.WHITE);
+         callParentMethod();
 //         titlereport1=v.findViewById(R.id.titlereport1);
 //        titlereport2=v.findViewById(R.id.titlereport2);
         return v;
     }
-
+    public void callParentMethod(){
+        getActivity().onBackPressed();
+    }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {

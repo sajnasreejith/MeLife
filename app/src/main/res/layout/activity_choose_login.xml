@@ -7,7 +7,6 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".Authentication.ChooseLogin">
-
     <FrameLayout
         android:id="@+id/frameLayout2"
         android:layout_width="wrap_content"

@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bluescreen"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/viewreportlayout"
     tools:context=".activities.ui.fragments.ViewTestReportFragment">
@@ -28,19 +27,20 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_height="150dp"
                 android:id="@+id/skillimage"
-                android:src="@drawable/iconpsycho"/>
+                android:src="@drawable/icontest"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/skillimage"
+                android:typeface="serif"
                 android:textSize="25dp"
-                android:textStyle="bold|italic"
+                android:textStyle="bold"
                 android:id="@+id/skill_title"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_marginTop="20dp"
                 android:text="@string/Title_skilltest"
-                android:textColor="@color/darkblue" />
+                android:textColor="@color/themecolor" />
         </LinearLayout>
 
         <LinearLayout
@@ -52,16 +52,17 @@
             <com.skydoves.elasticviews.ElasticButton
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:typeface="serif"
                 android:background="@drawable/button_drawable"
                 android:text="@string/Title_viewreport"
-                android:textStyle="italic"
                 android:id="@+id/btn_viewreport"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="40dp"
                 android:textColor="@color/darkblue"
                 android:textSize="17sp"
                 app:button_cornerRadius="4dp"
                 app:button_duration="250"
                 app:button_scale="0.87" />
+
         </LinearLayout>
 
     </LinearLayout>

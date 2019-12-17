@@ -2,8 +2,10 @@ package com.technohub.melife.activities.ui.fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +14,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 
+import com.technohub.melife.Authentication.ChooseLogin;
+import com.technohub.melife.MainActivity;
 import com.technohub.melife.R;
+import com.technohub.melife.activities.BaseActivity;
 import com.technohub.melife.activities.classes.Constants;
 
 /**
@@ -31,7 +36,7 @@ public class CelebrationFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private static int TIME_OUT = 2000;
     private OnFragmentInteractionListener mListener;
 
     public CelebrationFragment() {
@@ -64,12 +69,29 @@ public class CelebrationFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    public void callParentMethod(){
+        getActivity().onBackPressed();
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        callParentMethod();
         // Inflate the layout for this fragment
+        new Handler().postDelayed(new Runnable() {
 
+            /*
+             * Showing splash screen with a timer. This will be useful when you
+             * want to show case your app logo / company
+             */
+
+            @Override
+            public void run() {
+                // This method will be executed once the timer is over
+                // Start your app main activity
+                Intent intent = new Intent(getActivity(), BaseActivity.class);
+                startActivity(intent);
+            }
+        }, TIME_OUT);
         return inflater.inflate(R.layout.fragment_celebration, container, false);
     }
 

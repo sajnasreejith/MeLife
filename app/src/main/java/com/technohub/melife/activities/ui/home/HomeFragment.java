@@ -11,12 +11,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.technohub.melife.R;
+import com.technohub.melife.activities.BaseActivity;
 import com.technohub.melife.activities.classes.Constants;
 import com.technohub.melife.activities.ui.fragments.InstructionsFragment;
 import com.technohub.melife.activities.ui.fragments.StartSkillTestFragment;
@@ -29,7 +31,7 @@ import com.technohub.melife.activities.ui.fragments.ViewTestReportFragment;
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements BaseActivity.OnBackPressedListner{
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -75,6 +77,9 @@ public class HomeFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+    public void callParentMethod(){
+        getActivity().onBackPressed();
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -83,6 +88,7 @@ public class HomeFragment extends Fragment {
         v=inflater.inflate(R.layout.fragment_home_fragment_new, container, false);
         v.setBackgroundColor(Color.WHITE);
                                 initView();
+                                callParentMethod();
         animBounce = AnimationUtils.loadAnimation(getContext(),
                 R.anim.bounce_animation);
 
@@ -142,6 +148,7 @@ public class HomeFragment extends Fragment {
         });
         return v;
     }
+
 
     void initView()
     {
@@ -216,7 +223,11 @@ public class HomeFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
-
+    @Override
+    public boolean onBackPressed() {
+        Toast.makeText(getActivity(),"OnBackpress Click",Toast.LENGTH_LONG).show();
+        return false;
+    }
     @Override
     public void onResume() {
         super.onResume();

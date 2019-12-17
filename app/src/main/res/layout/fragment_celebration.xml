@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/transparent_blue"
     tools:context=".activities.ui.fragments.CelebrationFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -47,7 +46,7 @@
        <TextView
            android:layout_width="wrap_content"
            android:text="@string/Title_cele"
-           android:textColor="@color/whiteLogocolor"
+           android:textColor="@color/darkblue"
            android:textSize="50dp"
            android:layout_height="wrap_content"/>
        <ImageView

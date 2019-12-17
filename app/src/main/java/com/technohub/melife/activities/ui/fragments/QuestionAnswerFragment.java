@@ -12,9 +12,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.CountDownTimer;
 import android.util.Log;
+import android.util.Size;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,9 +24,21 @@ import android.widget.Toast;
 import com.skydoves.elasticviews.ElasticButton;
 import com.technohub.melife.R;
 import com.technohub.melife.activities.classes.Constants;
+import com.technohub.melife.activities.classes.MyBloomListener;
 import com.technohub.melife.activities.ui.home.HomeFragment;
 
 import java.util.concurrent.TimeUnit;
+
+import me.samlss.bloom.Bloom;
+import me.samlss.bloom.effector.BloomEffector;
+import me.samlss.bloom.listener.BloomListener;
+import me.samlss.bloom.particle.BloomParticle;
+import me.samlss.bloom.shape.ParticleShape;
+import me.samlss.bloom.shape.distributor.ParticleShapeDistributor;
+import me.samlss.bloom.shape.distributor.RectShapeDistributor;
+import me.samlss.bloom.shape.distributor.StarShapeDistributor;
+import nl.dionsegijn.konfetti.KonfettiView;
+import nl.dionsegijn.konfetti.models.Shape;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,6 +58,7 @@ public class QuestionAnswerFragment extends Fragment {
 //    TextView pagetitle1,pagetitle2;
     TextView timer,Question,Qno;
     Button answera,answerb,answerc,answerd,answere;
+    KonfettiView konfettiView;
 //    ElasticButton btnnext;
     View v;
     int flag=0;
@@ -80,159 +95,137 @@ public class QuestionAnswerFragment extends Fragment {
             Log.e("qa title",title);
         }
     }
-
+    public void callParentMethod(){
+        getActivity().onBackPressed();
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
          v= inflater.inflate(R.layout.fragment_question_answer, container, false);
          v.setBackgroundColor(Color.WHITE);
          initViews();
+         callParentMethod();
          answera.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-//                 buttonPress(v);
+                 Bloom.with(getActivity())
+                         .setParticleRadius(10)
+                         .setShapeDistributor(new StarShapeDistributor())
+                         .setEffector(new BloomEffector.Builder()
+                                 .setDuration(2000)
+                                 .setRotationSpeedRange(0.01f, 0.05f)
+                                 .setSpeedRange(0.1f, 0.5f)
+                                 .setAcceleration(0.00025f, 90)
+                                 .setAnchor(v.getWidth() / 2, v.getHeight())
+                                 .build())
+                         .boom(v);
                  answera.setBackgroundResource(R.drawable.bluedrawable);
-                 answere.setBackgroundResource(R.drawable.button_filleddrawable);
-                 answerb.setBackgroundResource(R.drawable.button_filleddrawable);
-                 answerc.setBackgroundResource(R.drawable.button_filleddrawable);
-                 answerd.setBackgroundResource(R.drawable.button_filleddrawable);
                  selectAnswer();
-//                 answerb.setBackgroundResource(R.drawable.button_filleddrawable);
-//                 answerc.setBackgroundResource(R.drawable.button_filleddrawable);
-//                 answerd.setBackgroundResource(R.drawable.button_filleddrawable);
-//                 answere.setBackgroundResource(R.drawable.button_filleddrawable);
-
              }
          });
         answerb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                buttonPress(v);
+                Bloom.with(getActivity())
+                        .setParticleRadius(10)
+                        .setShapeDistributor(new RectShapeDistributor())
+                        .setEffector(new BloomEffector.Builder()
+                                .setDuration(2000)
+                                .setRotationSpeedRange(0.01f, 0.05f)
+                                .setSpeedRange(0.1f, 0.5f)
+                                .setAcceleration(0.00025f, 90)
+                                .setAnchor(v.getWidth() / 2, v.getHeight())
+                                .build())
+                        .boom(v);
                 answerb.setBackgroundResource(R.drawable.bluedrawable);
-                answere.setBackgroundResource(R.drawable.button_filleddrawable);
-                answera.setBackgroundResource(R.drawable.button_filleddrawable);
-                answerc.setBackgroundResource(R.drawable.button_filleddrawable);
-                answerd.setBackgroundResource(R.drawable.button_filleddrawable);
                 selectAnswer();
             }
         });
         answerc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                buttonPress(v);
-                answerc.setBackgroundResource(R.drawable.bluedrawable);
-                answere.setBackgroundResource(R.drawable.button_filleddrawable);
-                answerb.setBackgroundResource(R.drawable.button_filleddrawable);
-                answera.setBackgroundResource(R.drawable.button_filleddrawable);
-                answerd.setBackgroundResource(R.drawable.button_filleddrawable);
+
+                Bloom.with(getActivity())
+                        .setParticleRadius(10)
+                        .setShapeDistributor(new ParticleShapeDistributor() {
+                            @Override
+                            public ParticleShape getShape(BloomParticle particle) {
+                                return null;
+                            }
+                        })
+                        .setEffector(new BloomEffector.Builder()
+                                .setDuration(2000)
+                                .setRotationSpeedRange(0.01f, 0.05f)
+                                .setSpeedRange(0.1f, 0.5f)
+                                .setAcceleration(0.00025f, 90)
+                                .setAnchor(v.getWidth() / 2, v.getHeight())
+                                .build())
+                        .boom(v);
+
+
                 selectAnswer();
             }
         });
         answerd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                buttonPress(v);
-                answerd.setBackgroundResource(R.drawable.bluedrawable);
-                answere.setBackgroundResource(R.drawable.button_filleddrawable);
-                answerb.setBackgroundResource(R.drawable.button_filleddrawable);
-                answerc.setBackgroundResource(R.drawable.button_filleddrawable);
-                answera.setBackgroundResource(R.drawable.button_filleddrawable);
-                selectAnswer();
+
+                konfettiView.build()
+                        .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
+                        .setDirection(0.0, 359.0)
+                        .setSpeed(5f, 5f)
+                        .setFadeOutEnabled(true)
+                        .setTimeToLive(2000L)
+                        .addShapes(Shape.RECT, Shape.CIRCLE)
+                        .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
+                        .streamFor(200, 1000L);
+                         selectAnswer();
             }
         });
         answere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                buttonPress(v);
-                answere.setBackgroundResource(R.drawable.bluedrawable);
-                answera.setBackgroundResource(R.drawable.button_filleddrawable);
-                answerb.setBackgroundResource(R.drawable.button_filleddrawable);
-                answerc.setBackgroundResource(R.drawable.button_filleddrawable);
-                answerd.setBackgroundResource(R.drawable.button_filleddrawable);
+//
+
+                konfettiView.build()
+                        .addColors(Color.BLUE, Color.YELLOW)
+                        .setDirection(0.0, 359.0)
+                        .setSpeed(5f, 5f)
+                        .setFadeOutEnabled(true)
+                        .setTimeToLive(2000L)
+                        .addShapes(Shape.RECT, Shape.CIRCLE)
+                        .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
+                        .streamFor(200, 500L);
                 selectAnswer();
             }
         });
-
-//        btnnext.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-////                flag++;
-////                Qno.setText(flag+"");
-////                setBackgroundColor_Button();
-////                if(flag==1) {
-////                    fun();
-////                }
-////                if(flag<Constants.questions.length)
-////                {
-////                    Question.setText(Constants.questions[flag]);
-////                }
-////                else
-////                {
-////                    fun();
-////                }
-////                if(flag==Constants.questions.length)
-////                {
-////                    Toast.makeText(getContext(),"Timer Stops", Toast.LENGTH_SHORT).show();
-////                }
-//            }
-//        });
          return v;
     }
-        public void buttonPress(View v) {
-        switch (v.getId()) {
-            case R.id.answera:
-              strSelected_ans=answera.getText().toString();
-              Log.e("Answer",strSelected_ans);
-                break;
-            case R.id.answerb:
-                strSelected_ans=answera.getText().toString();
-                break;
-            case R.id.answerc:
-                strSelected_ans=answerc.getText().toString();
-                break;
-            case R.id.answerd:
-                strSelected_ans=answerd.getText().toString();
-                break;
-            case R.id.answere:
-                 strSelected_ans=answere.getText().toString();
-                break;
-
-        }}
-
 void selectAnswer()
 {
+    setBackgroundColor_Button();
     flag++;
-      Qno.setText(flag+"");
-//    setBackgroundColor_Button();
+    Qno.setText(flag+"");
     if(flag==1) {
-        Question.setText(Constants.questions[flag]);
-        Fragment newFragment = new SuccessFrag1();
-        fun(newFragment);
 
+        Question.setText(Constants.questions[flag]);
     }
     if(flag==2) {
 
         Question.setText(Constants.questions[flag]);
-        Fragment newFragment = new SuccessFrag2();
-        fun(newFragment);
-
     }
     if(flag==3) {
         Question.setText(Constants.questions[flag]);
-        Fragment newFragment = new SuccessFrag3();
-        fun(newFragment);
 
     }
     if(flag==4) {
         Question.setText(Constants.questions[flag]);
-        Fragment newFragment = new SuccessFrag4();
-        fun(newFragment);
+
 
     }
     if(flag==5) {
         Question.setText(Constants.questions[flag]);
-        Fragment newFragment = new SuccessFrag5();
-        fun(newFragment);
+
 
     }
     if(flag<Constants.questions.length)
@@ -241,33 +234,15 @@ void selectAnswer()
     }
     else
     {
-        Fragment newFragment = new HomeFragment();
-        fun(newFragment);
+
     }
     if(flag==Constants.questions.length)
     {
-        Fragment newFragment = new CelebrationFragment();
-        fun(newFragment);
+            Fragment f=new CelebrationFragment();
+            fun(f);
     }
 }
-    private void showCustomDialog() {
-        //before inflating the custom alert dialog layout, we will get the current activity viewgroup
-        ViewGroup viewGroup = v.findViewById(R.id.qa_layout);
 
-        //then we will inflate the custom alert dialog xml that we created
-        View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.fragment_celebration, viewGroup, false);
-
-
-        //Now we need an AlertDialog.Builder object
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-
-        //setting the view of the builder to our custom view that we already inflated
-        builder.setView(dialogView);
-
-        //finally creating the alert dialog and displaying it
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-    }
     void fun(Fragment f)
     {
             // Create new fragment and transaction
@@ -282,11 +257,11 @@ void selectAnswer()
     }
     void setBackgroundColor_Button()
     {
-        answere.setBackgroundResource(R.drawable.button_filleddrawable);
-        answerb.setBackgroundResource(R.drawable.button_filleddrawable);
-        answerc.setBackgroundResource(R.drawable.button_filleddrawable);
-        answerd.setBackgroundResource(R.drawable.button_filleddrawable);
-        answera.setBackgroundResource(R.drawable.button_filleddrawable);
+        answere.setBackgroundResource(R.color.themecolor);
+        answerb.setBackgroundResource(R.color.themecolor);
+        answerc.setBackgroundResource(R.color.themecolor);
+        answerd.setBackgroundResource(R.color.themecolor);
+        answera.setBackgroundResource(R.color.themecolor);
     }
     void initViews()
     {
@@ -301,6 +276,7 @@ void selectAnswer()
 //        btnnext=(ElasticButton) v.findViewById(R.id.btn_next);
         Question=v.findViewById(R.id.txtQuestion);
         Qno=v.findViewById(R.id.txtQno);
+        konfettiView = (KonfettiView)v.findViewById(R.id.viewKonfetti);
     }
     // TODO: Rename method, update argument and hook method into UI event
 //    public void onButtonPressed(Uri uri) {
