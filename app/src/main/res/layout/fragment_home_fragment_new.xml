@@ -99,7 +99,6 @@
                 <TextView
                     android:textAlignment="center"
                     android:paddingTop="10dp"
-
                     android:layout_gravity="center_horizontal"
                     android:textColor="#000"
                     android:textSize="15sp"

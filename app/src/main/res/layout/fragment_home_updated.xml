@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/homelayout"
+    xmlns:card_view="http://schemas.android.com/tools">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@drawable/bac"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:id="@+id/LinearLayout02"
+                android:layout_height="70dp"
+                android:paddingTop="10dp"
+                android:layout_width="wrap_content"
+                >
+                <ImageView
+                    android:id="@+id/logo"
+                    android:src="@drawable/smalllogo"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="Apply">
+                </ImageView>
+                <TextView
+                    android:id="@+id/r"
+                    android:layout_width="100dp"
+                    android:typeface="serif"
+                    android:layout_height="100dp"
+                    android:textSize="20dp"
+                    android:textColor="#fff"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_centerInParent="true"
+                    android:text="Me Life">
+                </TextView>
+                <ImageView
+                    android:id="@+id/profile"
+                    android:layout_width="100dp"
+                    android:src="@drawable/usernew"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="100dp"
+                    android:layout_gravity="right"
+                    android:text="Cancel">
+                </ImageView>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+
+                    android:gravity="center">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/chinnu"
+                    app:civ_border_color="#fff"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_radius="10"
+                    app:civ_shadow_color="#3f51b5"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Kate winslet"
+                            android:typeface="serif"
+                            android:textColor="#fff"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/profile"
+                    app:civ_border_color="#fff"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_radius="10"
+                    app:civ_shadow_color="#3f51b5"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Tony stork"
+                            android:layout_gravity="center"
+                            android:typeface="serif"
+                            android:textColor="#fff"
+                            android:layout_height="wrap_content"/>
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/girl"
+                    app:civ_border_color="#fff"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_radius="10"
+                    app:civ_shadow_color="#3f51b5"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Angelina Jolly"
+                            android:textColor="#fff"
+                            android:typeface="serif"
+                            android:layout_gravity="center"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+            </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F0F0F0"
+                android:orientation="vertical">
+            <GridLayout
+                android:id="@+id/mainGrid"
+                android:layout_marginTop="10dp"
+                android:rowCount="3"
+                android:columnCount="2"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:layout_weight="8"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="14dp">
+
+                <androidx.cardview.widget.CardView
+                    app:cardPreventCornerOverlap="true"
+                    android:layout_width="130dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_marginBottom="16dp"
+                    android:layout_rowWeight="1"
+                    android:id="@+id/txtpsychotest"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="10dp"
+                    app:cardElevation="8dp"
+                    app:cardBackgroundColor="#31c200"
+                    app:cardCornerRadius="10dp">
+                    <LinearLayout
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:src="@drawable/iconpsycho"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="40dp"
+                            android:id="@+id/btn_psychotest"
+                            android:layout_height="40dp" />
+
+                        <TextView
+                            android:layout_width="103dp"
+                            android:layout_height="58dp"
+                            android:typeface="serif"
+                            android:layout_gravity="center_horizontal"
+                            android:paddingTop="10dp"
+                            android:text="@string/text_psy_test"
+                            android:textAlignment="center"
+                            android:textColor="#fff"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- COLUMN 2  -->
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:id="@+id/txttestreport"
+                    android:layout_marginBottom="16dp"
+                    android:layout_rowWeight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="16dp"
+                    app:cardElevation="8dp"
+                    app:cardBackgroundColor="#EE82EE"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/report"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp" />
+
+                        <TextView
+                            android:textAlignment="center"
+                            android:typeface="serif"
+                            android:text="@string/text_testreports"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:id="@+id/btn_testreport"
+                            android:textColor="#fff"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_marginBottom="16dp"
+                    android:layout_rowWeight="1"
+                    android:id="@+id/txt_faq"
+                    app:cardBackgroundColor="#FFAE42"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="10dp"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/yfaq"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp" />
+
+                        <TextView
+                            android:textAlignment="center"
+                            android:text="@string/text_faq"
+                            android:typeface="serif"
+                            android:textColor="#fff"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    app:cardBackgroundColor="#00c3e3"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_marginBottom="16dp"
+                    android:id="@+id/txt_contactus"
+                    android:layout_rowWeight="1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="16dp"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/iconcontactus"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp" />
+
+                        <TextView
+                            android:textAlignment="center"
+                            android:text="@string/text_contactus"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:textColor="#fff"
+                            android:typeface="serif"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    app:cardBackgroundColor="#B57EDC"
+                    android:layout_height="80dp"
+                    android:layout_columnWeight="1"
+                    android:layout_marginBottom="16dp"
+                    android:layout_rowWeight="1"
+                    android:id="@+id/txt_aboutus"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="10dp"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/team"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp" />
+
+                        <TextView
+                            android:textAlignment="center"
+                            android:text="@string/text_aboutus"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:textColor="#fff"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:typeface="serif"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="80dp"
+                    app:cardBackgroundColor="#ff726f"
+                    android:layout_columnWeight="1"
+                    android:layout_marginBottom="16dp"
+                    android:layout_rowWeight="1"
+                    android:id="@+id/txtsetting"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="16dp"
+                    app:cardElevation="8dp"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_margin="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:src="@drawable/setti"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp" />
+
+                        <TextView
+                            android:textAlignment="center"
+                            android:text="@string/text_setting"
+                            android:textColor="#fff"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:typeface="serif"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

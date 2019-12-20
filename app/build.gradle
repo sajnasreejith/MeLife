@@ -42,5 +42,6 @@ dependencies {
     implementation 'me.samlss:bloom:1.0.0'
     implementation 'nl.dionsegijn:konfetti:1.1.3'
     implementation 'com.codesgood:justifiedtextview:1.1.0'
+    implementation 'com.mikhaellopez:circularimageview:4.1.1'
 
 }

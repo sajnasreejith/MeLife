@@ -49,6 +49,7 @@ public class BaseActivity extends AppCompatActivity implements BottomNavigationV
         setContentView(R.layout.activity_base);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+           getSupportActionBar().hide();
         final DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         BottomNavigationView navView = findViewById(R.id.bottom_nav_view);

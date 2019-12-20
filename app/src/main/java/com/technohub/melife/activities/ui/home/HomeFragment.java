@@ -18,7 +18,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.technohub.melife.R;
 import com.technohub.melife.activities.classes.Constants;
-import com.technohub.melife.activities.ui.fragments.InstructionsFragment;
 import com.technohub.melife.activities.ui.fragments.StartSkillTestFragment;
 import com.technohub.melife.activities.ui.fragments.ViewTestReportFragment;
 /**
@@ -40,7 +39,7 @@ public class HomeFragment extends Fragment {
     private String mParam2;
         View v;
     Animation animBounce;
-    ImageView ptest,faq,setting,contactus,aboutus,testreport;
+//    ImageView ptest,faq,setting,contactus,aboutus,testreport;
     CardView txtptest,txtfaq,txtcontact,txtabout,txtset,txttestreport;
     TextView tviewptest;
     private OnFragmentInteractionListener mListener;
@@ -55,6 +54,8 @@ public class HomeFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
+     *
+     *
      * @return A new instance of fragment HomeFragment.
      */
     // TODO: Rename and change types and number of parameters
@@ -79,80 +80,81 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-        v=inflater.inflate(R.layout.fragment_home_fragment_new, container, false);
+      
+        v=inflater.inflate(R.layout.fragment_home_updated, container, false);
+        CardView cardView = v.findViewById(R.id.txtpsychotest);
+        cardView.setBackgroundResource(R.drawable.Anamnisar);
         v.setBackgroundColor(Color.WHITE);
                                 initView();
                                 callParentMethod();
         animBounce = AnimationUtils.loadAnimation(getContext(),
                 R.anim.bounce_animation);
 
-        ptest.setOnClickListener(new View.OnClickListener() {
+        txtptest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ptest.startAnimation(animBounce);
+                txtptest.startAnimation(animBounce);
                 fun();
-                txtptest.setCardBackgroundColor(Color.CYAN);
+
             }
         });
 
-        faq.setOnClickListener(new View.OnClickListener() {
+        txtfaq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                faq.startAnimation(animBounce);
+                txtfaq.startAnimation(animBounce);
 //                txtfaq.setCardBackgroundColor(Color.CYAN);
 
             }
         });
 
 
-        contactus.setOnClickListener(new View.OnClickListener() {
+        txtcontact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                contactus.startAnimation(animBounce);
+                txtcontact.startAnimation(animBounce);
 //                txtcontact.setCardBackgroundColor(Color.CYAN);
 //                txtcontact.setCardBackgroundColor(R.drawable.button_drawable);
             }
         });
 
-        setting.setOnClickListener(new View.OnClickListener() {
+        txtset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setting.startAnimation(animBounce);
+                txtset.startAnimation(animBounce);
 //                txtsetting.setCardBackgroundColor(Color.CYAN);
 //                txtsetting.setCardBackgroundColor(R.drawable.button_drawable);
             }
         });
 
-        testreport.setOnClickListener(new View.OnClickListener() {
+        txttestreport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testreport.startAnimation(animBounce);
+                txttestreport.startAnimation(animBounce);
                 fun2();
-                txttestreport.setCardBackgroundColor(Color.CYAN);
+
 //                txttestreport.setCardBackgroundColor(R.drawable.button_drawable);
             }
         });
-        aboutus.setOnClickListener(new View.OnClickListener() {
+        txtabout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                aboutus.startAnimation(animBounce);
+                txtabout.startAnimation(animBounce);
 //                txtabout.setCardBackgroundColor(Color.CYAN);
 //                txtabout.setCardBackgroundColor(R.drawable.button_drawable);
             }
         });
         return v;
     }
-
     void initView()
     {
 //        buttond
-        ptest=v.findViewById(R.id.btn_psychotest);
-        faq=v.findViewById(R.id.btn_faq);
-        contactus=v.findViewById(R.id.btncontact);
-        aboutus=v.findViewById(R.id.btn_aboutus);
-        setting=v.findViewById(R.id.btn_setting);
-        testreport=v.findViewById(R.id.btn_testreport);
+//        ptest=v.findViewById(R.id.btn_psychotest);
+//        faq=v.findViewById(R.id.btn_faq);
+//        contactus=v.findViewById(R.id.btncontact);
+//        aboutus=v.findViewById(R.id.btn_aboutus);
+//        setting=v.findViewById(R.id.btn_setting);
+//        testreport=v.findViewById(R.id.btn_testreport);
 
 //cardviews
         txtptest=v.findViewById(R.id.txtpsychotest);
@@ -191,9 +193,7 @@ public class HomeFragment extends Fragment {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         // Replace whatever is in the fragment_container view with this fragment,
         // and add the transaction to the back stack
-        Bundle args = new Bundle();
-        args.putString(Constants.PAGETITLE_KEY,tviewptest.getText().toString() );
-        newFragment.setArguments(args);
+
         transaction.replace(R.id.homelayout, newFragment);
         transaction.addToBackStack(null);
         transaction.commit();
