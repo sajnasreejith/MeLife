@@ -1,16 +1,22 @@
 package com.technohub.melife.activities.ui.fragments;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.technohub.melife.R;
 
 /**
@@ -26,11 +32,12 @@ public class SuccessFrag2 extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-      View v;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+View v;
+ImageView suc2;
     private OnFragmentInteractionListener mListener;
 
     public SuccessFrag2() {
@@ -67,7 +74,22 @@ public class SuccessFrag2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        v=inflater.inflate(R.layout.fragment_success_frag2, container, false);
+        // Inflate the layout for this fragment
+
+         v=inflater.inflate(R.layout.fragment_success_frag2, container, false);
+        suc2=(ImageView)v.findViewById(R.id.suc2) ;
+
+        Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate);
+        //I want to start animation here
+        suc2.startAnimation(animation);
+        //Stop animation after 1 second
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                suc2.clearAnimation();
+                suc2.setVisibility(View.GONE);
+            }
+        }, 1000);
 
         return v;
     }

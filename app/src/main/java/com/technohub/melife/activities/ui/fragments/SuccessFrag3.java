@@ -1,15 +1,19 @@
 package com.technohub.melife.activities.ui.fragments;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.technohub.melife.R;
 
@@ -26,6 +30,8 @@ public class SuccessFrag3 extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+ImageView suc3;
+TextView spo;
 View v;
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -67,10 +73,24 @@ View v;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        v=inflater.inflate(R.layout.fragment_success_frag3, container, false);
 
-        return v;
+       v= inflater.inflate(R.layout.fragment_success_frag3, container, false);
+       spo=v.findViewById(R.id.spo);
+       suc3=v.findViewById(R.id.suc3);
 
+        Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.bounce_animation);
+        //I want to start animation here
+        suc3.startAnimation(animation);
+        //Stop animation after 1 second
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                 suc3.clearAnimation();
+                 suc3.setVisibility(View.GONE);
+                 spo.setVisibility(View.GONE);
+            }
+        }, 1500);
+       return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -83,12 +103,7 @@ View v;
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-//        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
+
     }
 
     @Override

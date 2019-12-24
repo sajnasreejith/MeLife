@@ -78,7 +78,7 @@ public class ViewTestReportFragment extends Fragment {
         v=inflater.inflate(R.layout.fragment_view_test_report, container, false);
         v.setBackgroundColor(Color.WHITE);
         viewRep=(ElasticButton)v.findViewById(R.id.btn_viewreport);
-        callParentMethod();
+//        callParentMethod();
 //        txt_skilltitle=v.findViewById(R.id.skill_title);
 //        txt_title=v.findViewById(R.id.viewrep_title);
         viewRep.setOnClickListener(new View.OnClickListener() {

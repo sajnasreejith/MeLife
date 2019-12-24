@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ui.fragments.AboutUsFragment">
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+     >
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/titleimage"
+       />
+
+        <com.codesgood.views.JustifiedTextView
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+
+            android:textColor="@color/darkblue"
+            android:typeface="serif"
+            android:lineSpacingExtra="7dp"
+            android:text="Me life is a userfriendly application that provides the students ,a track to their future.The application is effective in the areas of education as the students can determine their area of exposure to the
+career.Many face the confusion to choose their career hence the Melife lead them to their right path.So that they can easily succeed in their career path effectively."
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="VERSION 1.0"
+            android:fontFamily="@font/goodtimesrg"
+            android:background="@drawable/bluedrawable"
+            android:textColor="@color/whiteLogocolor"
+            android:layout_width="match_parent"/>
+        <TextView
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Advertise with us"
+            android:textColor="@color/darkblue"
+            android:layout_width="match_parent"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginTop="50dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Connect with us"
+                android:typeface="serif"
+                android:textColor="@color/google_red"
+                android:layout_width="match_parent"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="left"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:src="@drawable/email"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Contact us"
+                android:typeface="serif"
+                android:textSize="15sp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="left"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:src="@drawable/facebook"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Like us on facebook"
+                android:typeface="serif"
+                android:textSize="15sp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="left"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:src="@drawable/twitter"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:typeface="serif"
+                android:textSize="15sp"
+                android:text="Follow us on twitter"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="left"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:src="@drawable/youtube"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Watch us on Youtube"
+                android:typeface="serif"
+                android:textSize="15sp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="left"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:src="@drawable/playstore"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Rate Us on playstore"
+                android:typeface="serif"
+                android:textSize="15sp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="left"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:src="@drawable/instagram"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Follow Us on Instagram"
+                android:typeface="serif"
+                android:textSize="15sp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="left"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_height="wrap_content"
+                android:src="@drawable/github"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:text="Fork Us on Github"
+                android:typeface="serif"
+                android:textSize="15sp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"/>
+        </LinearLayout>
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_height="wrap_content">-->
+<!--            <TextView-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="left"-->
+<!--                android:text="Advertise with us"-->
+<!--                android:textColor="@color/darkblue"-->
+<!--                android:layout_width="match_parent"/>-->
+<!--            <TextView-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="left"-->
+<!--                android:text="Advertise with us"-->
+<!--                android:textColor="@color/darkblue"-->
+<!--                android:layout_width="match_parent"/>-->
+<!--        </LinearLayout>-->
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+</FrameLayout>

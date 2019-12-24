@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -11,17 +12,26 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.util.Log;
 import android.util.Size;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.skydoves.elasticviews.ElasticButton;
+import com.technohub.melife.Authentication.ChooseLogin;
+import com.technohub.melife.MainActivity;
 import com.technohub.melife.R;
 import com.technohub.melife.activities.classes.Constants;
 import com.technohub.melife.activities.classes.MyBloomListener;
@@ -52,7 +62,7 @@ public class QuestionAnswerFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    private static int TIME_OUT = 3000;
     // TODO: Rename and change types of parameters
     private String title,strSelected_ans;
 //    TextView pagetitle1,pagetitle2;
@@ -95,6 +105,7 @@ public class QuestionAnswerFragment extends Fragment {
             Log.e("qa title",title);
         }
     }
+
     public void callParentMethod(){
         getActivity().onBackPressed();
     }
@@ -107,7 +118,10 @@ public class QuestionAnswerFragment extends Fragment {
          callParentMethod();
          answera.setOnClickListener(new View.OnClickListener() {
              @Override
-             public void onClick(View v) {
+             public void onClick(View vi) {
+
+                 Fragment f=new SuccessFrag1();
+                 fun(f);
                  Bloom.with(getActivity())
                          .setParticleRadius(10)
                          .setShapeDistributor(new StarShapeDistributor())
@@ -116,16 +130,20 @@ public class QuestionAnswerFragment extends Fragment {
                                  .setRotationSpeedRange(0.01f, 0.05f)
                                  .setSpeedRange(0.1f, 0.5f)
                                  .setAcceleration(0.00025f, 90)
-                                 .setAnchor(v.getWidth() / 2, v.getHeight())
+                                 .setAnchor(vi.getWidth() / 2, vi.getHeight())
                                  .build())
-                         .boom(v);
-                 answera.setBackgroundResource(R.drawable.bluedrawable);
+                         .boom(vi);
+
+//                 answera.setBackgroundResource(R.drawable.bluedrawable);
                  selectAnswer();
              }
          });
         answerb.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View vi) {
+
+                Fragment f=new SuccessFrag2();
+                fun(f);
                 Bloom.with(getActivity())
                         .setParticleRadius(10)
                         .setShapeDistributor(new RectShapeDistributor())
@@ -134,17 +152,18 @@ public class QuestionAnswerFragment extends Fragment {
                                 .setRotationSpeedRange(0.01f, 0.05f)
                                 .setSpeedRange(0.1f, 0.5f)
                                 .setAcceleration(0.00025f, 90)
-                                .setAnchor(v.getWidth() / 2, v.getHeight())
+                                .setAnchor(vi.getWidth() / 2, vi.getHeight())
                                 .build())
-                        .boom(v);
-                answerb.setBackgroundResource(R.drawable.bluedrawable);
+                        .boom(vi);
+//                answerb.setBackgroundResource(R.drawable.bluedrawable);
                 selectAnswer();
             }
         });
         answerc.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View vi) {
+                Fragment f=new SuccessFrag3();
+                fun(f);
                 Bloom.with(getActivity())
                         .setParticleRadius(10)
                         .setShapeDistributor(new ParticleShapeDistributor() {
@@ -158,9 +177,9 @@ public class QuestionAnswerFragment extends Fragment {
                                 .setRotationSpeedRange(0.01f, 0.05f)
                                 .setSpeedRange(0.1f, 0.5f)
                                 .setAcceleration(0.00025f, 90)
-                                .setAnchor(v.getWidth() / 2, v.getHeight())
+                                .setAnchor(vi.getWidth() / 2, vi.getHeight())
                                 .build())
-                        .boom(v);
+                        .boom(vi);
 
 
                 selectAnswer();
@@ -168,7 +187,7 @@ public class QuestionAnswerFragment extends Fragment {
         });
         answerd.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View vi) {
 
                 konfettiView.build()
                         .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
@@ -179,12 +198,19 @@ public class QuestionAnswerFragment extends Fragment {
                         .addShapes(Shape.RECT, Shape.CIRCLE)
                         .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
                         .streamFor(200, 1000L);
+                ImageView suc2=(ImageView)v.findViewById(R.id.suc2);
+                suc2.setVisibility(View.VISIBLE);
+                YoYo.with(Techniques.RubberBand)
+                        .duration(200)
+                        .repeat(2)
+                        .playOn(v.findViewById(R.id.suc2));
                          selectAnswer();
             }
         });
+
         answere.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View vi) {
 //
 
                 konfettiView.build()
@@ -196,6 +222,11 @@ public class QuestionAnswerFragment extends Fragment {
                         .addShapes(Shape.RECT, Shape.CIRCLE)
                         .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
                         .streamFor(200, 500L);
+
+
+
+
+
                 selectAnswer();
             }
         });
@@ -203,6 +234,7 @@ public class QuestionAnswerFragment extends Fragment {
     }
 void selectAnswer()
 {
+
     setBackgroundColor_Button();
     flag++;
     Qno.setText(flag+"");

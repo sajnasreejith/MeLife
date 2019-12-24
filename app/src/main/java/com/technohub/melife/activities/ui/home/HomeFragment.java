@@ -9,15 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.mikhaellopez.circularimageview.CircularImageView;
 import com.technohub.melife.R;
-import com.technohub.melife.activities.classes.Constants;
+import com.technohub.melife.activities.ui.fragments.ReportFragment;
 import com.technohub.melife.activities.ui.fragments.StartSkillTestFragment;
 import com.technohub.melife.activities.ui.fragments.ViewTestReportFragment;
 /**
@@ -42,6 +42,7 @@ public class HomeFragment extends Fragment {
 //    ImageView ptest,faq,setting,contactus,aboutus,testreport;
     CardView txtptest,txtfaq,txtcontact,txtabout,txtset,txttestreport;
     TextView tviewptest;
+    CircularImageView test,report;
     private OnFragmentInteractionListener mListener;
 
     public HomeFragment() {
@@ -83,7 +84,7 @@ public class HomeFragment extends Fragment {
       
         v=inflater.inflate(R.layout.fragment_home_updated, container, false);
         CardView cardView = v.findViewById(R.id.txtpsychotest);
-        cardView.setBackgroundResource(R.drawable.Anamnisar);
+
         v.setBackgroundColor(Color.WHITE);
                                 initView();
                                 callParentMethod();
@@ -144,6 +145,21 @@ public class HomeFragment extends Fragment {
 //                txtabout.setCardBackgroundColor(R.drawable.button_drawable);
             }
         });
+
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+         Fragment f=new HomeFragment();
+         fun(f);
+            }
+        });
+        report.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment f=new ViewTestReportFragment();
+                fun(f);
+            }
+        });
         return v;
     }
     void initView()
@@ -166,8 +182,21 @@ public class HomeFragment extends Fragment {
 //        textview
 
         tviewptest=v.findViewById(R.id.tviewptest);
+        test=v.findViewById(R.id.testicon);
+        report=v.findViewById(R.id.reporticon);
     }
+    void fun(Fragment f)
+    {
+        // Create new fragment and transaction
 
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        // Replace whatever is in the fragment_container view with this fragment,
+        // and add the transaction to the back stack
+        transaction.replace(R.id.homelayout, f);
+        transaction.addToBackStack(null);
+        transaction.commit();
+
+    }
     void fun()
     {
         // Create new fragment and transaction

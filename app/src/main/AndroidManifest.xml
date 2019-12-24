@@ -11,6 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.ui.activities.AboutActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activities.BaseActivity"
             android:label="@string/title_activity_base"
@@ -18,17 +25,9 @@
 
         </activity>
         <activity android:name=".Authentication.SignUpScreen" />
-        <activity android:name=".Authentication.LoginScreen"></activity>
-        <activity
-            android:name=".Authentication.ChooseLogin">
-        </activity>
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Authentication.LoginScreen" />
+        <activity android:name=".Authentication.ChooseLogin"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

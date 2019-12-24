@@ -1,16 +1,22 @@
 package com.technohub.melife.activities.ui.fragments;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.technohub.melife.R;
 
 /**
@@ -30,7 +36,9 @@ public class SuccessFrag1 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-        View v;
+        View viw;
+        ImageView succ;
+        TextView tv;
     private OnFragmentInteractionListener mListener;
 
     public SuccessFrag1() {
@@ -65,11 +73,50 @@ public class SuccessFrag1 extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-         v=inflater.inflate(R.layout.fragment_success_frag1, container, false);
-         return v;
+        viw=inflater.inflate(R.layout.fragment_success_frag1, container, false);
+         succ=(ImageView)viw.findViewById(R.id.succ) ;
+        tv=(TextView) viw.findViewById(R.id.tv) ;
+        Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.sequential);
+        //I want to start animation here
+        succ.startAnimation(animation);
+        //Stop animation after 1 second
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                succ.clearAnimation();
+                succ.setVisibility(View.GONE);
+                tv.setVisibility(View.GONE);
+            }
+        }, 1000);
+
+
+
+
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                ImageView succ=(ImageView)viw.findViewById(R.id.succ) ;
+//                Animation animZoomIn = AnimationUtils.loadAnimation(getContext(),R.anim.sequential);
+//                succ.startAnimation(animZoomIn);
+//            }
+//        },2 * 1000);
+
+
+        return viw;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState){
+
     }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

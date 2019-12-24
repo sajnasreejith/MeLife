@@ -7,6 +7,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".Authentication.ChooseLogin">
+
     <FrameLayout
         android:id="@+id/frameLayout2"
         android:layout_width="wrap_content"
@@ -21,23 +22,32 @@
             android:scaleType="centerCrop"
             android:src="@drawable/splashimage" />
 
-
         <LinearLayout
-            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/linear">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2" />
 
             <com.skydoves.elasticviews.ElasticButton
                 android:id="@+id/btn_signin"
                 android:layout_width="300dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="500dp"
-                android:background="@drawable/button_drawable"
+                android:layout_gravity="center"
+                android:background="@drawable/button_strokeless"
                 android:text="Sign In"
                 android:textColor="@color/darkblue"
                 android:textSize="17sp"
@@ -45,6 +55,11 @@
                 app:button_cornerRadius="4dp"
                 app:button_duration="250"
                 app:button_scale="0.87" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
         </LinearLayout>
     </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
