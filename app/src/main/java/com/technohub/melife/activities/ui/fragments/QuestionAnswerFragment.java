@@ -119,20 +119,31 @@ public class QuestionAnswerFragment extends Fragment {
          answera.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View vi) {
+                 Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.bounce_animation);
+                 //I want to start animation here
+                 answera.startAnimation(animation);
+                 //Stop animation after 1 second
+                 new Handler().postDelayed(new Runnable() {
+                     @Override
+                     public void run() {
+                         answera.clearAnimation();
+                         Fragment f=new SuccessFrag1();
+                         fun(f);
+                     }
+                 }, 2000);
 
-                 Fragment f=new SuccessFrag1();
-                 fun(f);
-                 Bloom.with(getActivity())
-                         .setParticleRadius(10)
-                         .setShapeDistributor(new StarShapeDistributor())
-                         .setEffector(new BloomEffector.Builder()
-                                 .setDuration(2000)
-                                 .setRotationSpeedRange(0.01f, 0.05f)
-                                 .setSpeedRange(0.1f, 0.5f)
-                                 .setAcceleration(0.00025f, 90)
-                                 .setAnchor(vi.getWidth() / 2, vi.getHeight())
-                                 .build())
-                         .boom(vi);
+
+//                 Bloom.with(getActivity())
+//                         .setParticleRadius(10)
+//                         .setShapeDistributor(new StarShapeDistributor())
+//                         .setEffector(new BloomEffector.Builder()
+//                                 .setDuration(2000)
+//                                 .setRotationSpeedRange(0.01f, 0.05f)
+//                                 .setSpeedRange(0.1f, 0.5f)
+//                                 .setAcceleration(0.00025f, 90)
+//                                 .setAnchor(vi.getWidth() / 2, vi.getHeight())
+//                                 .build())
+//                         .boom(vi);
 
 //                 answera.setBackgroundResource(R.drawable.bluedrawable);
                  selectAnswer();
@@ -142,19 +153,29 @@ public class QuestionAnswerFragment extends Fragment {
             @Override
             public void onClick(View vi) {
 
-                Fragment f=new SuccessFrag2();
-                fun(f);
-                Bloom.with(getActivity())
-                        .setParticleRadius(10)
-                        .setShapeDistributor(new RectShapeDistributor())
-                        .setEffector(new BloomEffector.Builder()
-                                .setDuration(2000)
-                                .setRotationSpeedRange(0.01f, 0.05f)
-                                .setSpeedRange(0.1f, 0.5f)
-                                .setAcceleration(0.00025f, 90)
-                                .setAnchor(vi.getWidth() / 2, vi.getHeight())
-                                .build())
-                        .boom(vi);
+                Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.bounce_animation);
+                //I want to start animation here
+                answerb.startAnimation(animation);
+                //Stop animation after 1 second
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        answerb.clearAnimation();
+                        Fragment f=new SuccessFrag2();
+                        fun(f);
+                    }
+                }, 2000);
+//                Bloom.with(getActivity())
+//                        .setParticleRadius(10)
+//                        .setShapeDistributor(new RectShapeDistributor())
+//                        .setEffector(new BloomEffector.Builder()
+//                                .setDuration(2000)
+//                                .setRotationSpeedRange(0.01f, 0.05f)
+//                                .setSpeedRange(0.1f, 0.5f)
+//                                .setAcceleration(0.00025f, 90)
+//                                .setAnchor(vi.getWidth() / 2, vi.getHeight())
+//                                .build())
+//                        .boom(vi);
 //                answerb.setBackgroundResource(R.drawable.bluedrawable);
                 selectAnswer();
             }
@@ -162,24 +183,34 @@ public class QuestionAnswerFragment extends Fragment {
         answerc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View vi) {
-                Fragment f=new SuccessFrag3();
-                fun(f);
-                Bloom.with(getActivity())
-                        .setParticleRadius(10)
-                        .setShapeDistributor(new ParticleShapeDistributor() {
-                            @Override
-                            public ParticleShape getShape(BloomParticle particle) {
-                                return null;
-                            }
-                        })
-                        .setEffector(new BloomEffector.Builder()
-                                .setDuration(2000)
-                                .setRotationSpeedRange(0.01f, 0.05f)
-                                .setSpeedRange(0.1f, 0.5f)
-                                .setAcceleration(0.00025f, 90)
-                                .setAnchor(vi.getWidth() / 2, vi.getHeight())
-                                .build())
-                        .boom(vi);
+                Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.bounce_animation);
+                //I want to start animation here
+                answerc.startAnimation(animation);
+                //Stop animation after 1 second
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        answerc.clearAnimation();
+                        Fragment f=new SuccessFrag3();
+                        fun(f);
+                    }
+                }, 2000);
+//                Bloom.with(getActivity())
+//                        .setParticleRadius(10)
+//                        .setShapeDistributor(new ParticleShapeDistributor() {
+//                            @Override
+//                            public ParticleShape getShape(BloomParticle particle) {
+//                                return null;
+//                            }
+//                        })
+//                        .setEffector(new BloomEffector.Builder()
+//                                .setDuration(2000)
+//                                .setRotationSpeedRange(0.01f, 0.05f)
+//                                .setSpeedRange(0.1f, 0.5f)
+//                                .setAcceleration(0.00025f, 90)
+//                                .setAnchor(vi.getWidth() / 2, vi.getHeight())
+//                                .build())
+//                        .boom(vi);
 
 
                 selectAnswer();
@@ -188,22 +219,33 @@ public class QuestionAnswerFragment extends Fragment {
         answerd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View vi) {
-
-                konfettiView.build()
-                        .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
-                        .setDirection(0.0, 359.0)
-                        .setSpeed(5f, 5f)
-                        .setFadeOutEnabled(true)
-                        .setTimeToLive(2000L)
-                        .addShapes(Shape.RECT, Shape.CIRCLE)
-                        .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
-                        .streamFor(200, 1000L);
-                ImageView suc2=(ImageView)v.findViewById(R.id.suc2);
-                suc2.setVisibility(View.VISIBLE);
-                YoYo.with(Techniques.RubberBand)
-                        .duration(200)
-                        .repeat(2)
-                        .playOn(v.findViewById(R.id.suc2));
+                Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.bounce_animation);
+                //I want to start animation here
+                answerd.startAnimation(animation);
+                //Stop animation after 1 second
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        answerd.clearAnimation();
+                        Fragment f=new SuccessFrag1();
+                        fun(f);
+                    }
+                }, 2000);
+//                konfettiView.build()
+//                        .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
+//                        .setDirection(0.0, 359.0)
+//                        .setSpeed(5f, 5f)
+//                        .setFadeOutEnabled(true)
+//                        .setTimeToLive(2000L)
+//                        .addShapes(Shape.RECT, Shape.CIRCLE)
+//                        .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
+//                        .streamFor(200, 1000L);
+//                ImageView suc2=(ImageView)v.findViewById(R.id.suc2);
+//                suc2.setVisibility(View.VISIBLE);
+//                YoYo.with(Techniques.RubberBand)
+//                        .duration(200)
+//                        .repeat(2)
+//                        .playOn(v.findViewById(R.id.suc2));
                          selectAnswer();
             }
         });
@@ -211,17 +253,29 @@ public class QuestionAnswerFragment extends Fragment {
         answere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View vi) {
+                Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.bounce_animation);
+                //I want to start animation here
+                answere.startAnimation(animation);
+                //Stop animation after 1 second
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        answere.clearAnimation();
+                        Fragment f=new SuccessFrag2();
+                        fun(f);
+                    }
+                }, 2000);
 //
 
-                konfettiView.build()
-                        .addColors(Color.BLUE, Color.YELLOW)
-                        .setDirection(0.0, 359.0)
-                        .setSpeed(5f, 5f)
-                        .setFadeOutEnabled(true)
-                        .setTimeToLive(2000L)
-                        .addShapes(Shape.RECT, Shape.CIRCLE)
-                        .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
-                        .streamFor(200, 500L);
+//                konfettiView.build()
+//                        .addColors(Color.BLUE, Color.YELLOW)
+//                        .setDirection(0.0, 359.0)
+//                        .setSpeed(5f, 5f)
+//                        .setFadeOutEnabled(true)
+//                        .setTimeToLive(2000L)
+//                        .addShapes(Shape.RECT, Shape.CIRCLE)
+//                        .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
+//                        .streamFor(200, 500L);
 
 
 

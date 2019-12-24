@@ -62,7 +62,7 @@
                         android:layout_gravity="right"
                         android:paddingRight="20dp"
                         android:src="@drawable/prof"
-                        android:text="Cancel"></ImageView>
+                        android:text="Cancel"/>
                 </RelativeLayout>
 
                 <LinearLayout

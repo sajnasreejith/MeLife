@@ -27,17 +27,17 @@
         <com.codesgood.views.JustifiedTextView
             android:layout_marginTop="50dp"
             android:layout_width="match_parent"
-
             android:textColor="@color/darkblue"
             android:typeface="serif"
-            android:lineSpacingExtra="7dp"
+            android:textSize="15sp"
+            android:lineSpacingExtra="8dp"
             android:text="Me life is a userfriendly application that provides the students ,a track to their future.The application is effective in the areas of education as the students can determine their area of exposure to the
 career.Many face the confusion to choose their career hence the Melife lead them to their right path.So that they can easily succeed in their career path effectively."
             android:layout_height="wrap_content"/>
 
         <TextView
             android:layout_marginTop="50dp"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:gravity="center_vertical|center_horizontal"
             android:text="VERSION 1.0"
             android:fontFamily="@font/goodtimesrg"

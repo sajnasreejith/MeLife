@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
@@ -17,6 +18,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.mikhaellopez.circularimageview.CircularImageView;
 import com.technohub.melife.R;
+import com.technohub.melife.activities.ui.fragments.AboutUsFragment;
+import com.technohub.melife.activities.ui.fragments.ProfileFragment;
 import com.technohub.melife.activities.ui.fragments.ReportFragment;
 import com.technohub.melife.activities.ui.fragments.StartSkillTestFragment;
 import com.technohub.melife.activities.ui.fragments.ViewTestReportFragment;
@@ -43,6 +46,7 @@ public class HomeFragment extends Fragment {
     CardView txtptest,txtfaq,txtcontact,txtabout,txtset,txttestreport;
     TextView tviewptest;
     CircularImageView test,report;
+    ImageView profile;
     private OnFragmentInteractionListener mListener;
 
     public HomeFragment() {
@@ -141,6 +145,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 txtabout.startAnimation(animBounce);
+                Fragment f=new AboutUsFragment();
+                fun(f);
 //                txtabout.setCardBackgroundColor(Color.CYAN);
 //                txtabout.setCardBackgroundColor(R.drawable.button_drawable);
             }
@@ -157,6 +163,13 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Fragment f=new ViewTestReportFragment();
+                fun(f);
+            }
+        });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment f=new ProfileFragment();
                 fun(f);
             }
         });
@@ -182,8 +195,9 @@ public class HomeFragment extends Fragment {
 //        textview
 
         tviewptest=v.findViewById(R.id.tviewptest);
-        test=v.findViewById(R.id.testicon);
-        report=v.findViewById(R.id.reporticon);
+        test=(CircularImageView)v.findViewById(R.id.testicon);
+        report=(CircularImageView)v.findViewById(R.id.reporticon);
+        profile=(ImageView)v.findViewById(R.id.profile);
     }
     void fun(Fragment f)
     {

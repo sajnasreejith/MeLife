@@ -28,6 +28,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.technohub.melife.R;
 import com.technohub.melife.activities.ui.fragments.QuestionAnswerFragment;
 import com.technohub.melife.activities.ui.fragments.ReportFragment;
+import com.technohub.melife.activities.ui.fragments.ViewTestReportFragment;
 import com.technohub.melife.activities.ui.home.HomeFragment;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -103,7 +104,7 @@ public class BaseActivity extends AppCompatActivity implements BottomNavigationV
                     break;
 
                 case R.id.navigation_user:
-                    fragment = new ReportFragment();
+                    fragment = new ViewTestReportFragment();
                     break;
             }
 
