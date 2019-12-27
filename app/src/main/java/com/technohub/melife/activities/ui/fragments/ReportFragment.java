@@ -75,7 +75,8 @@ public class ReportFragment extends Fragment {
         // Inflate the layout for this fragment
          v=inflater.inflate(R.layout.fragment_report, container, false);;
          v.setBackgroundColor(Color.WHITE);
-         callParentMethod();
+        getFragmentManager().popBackStack("tag", 0);
+
 //         titlereport1=v.findViewById(R.id.titlereport1);
 //        titlereport2=v.findViewById(R.id.titlereport2);
         return v;
@@ -84,11 +85,11 @@ public class ReportFragment extends Fragment {
         getActivity().onBackPressed();
     }
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
+//    public void onButtonPressed(Uri uri) {
+//        if (mListener != null) {
+//            mListener.onFragmentInteraction(uri);
+//        }
+//    }
 
     @Override
     public void onResume() {
@@ -108,6 +109,7 @@ public class ReportFragment extends Fragment {
 //                    + " must implement OnFragmentInteractionListener");
 //        }
     }
+
 
     @Override
     public void onDetach() {

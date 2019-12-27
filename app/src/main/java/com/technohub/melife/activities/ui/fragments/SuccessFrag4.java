@@ -1,14 +1,23 @@
 package com.technohub.melife.activities.ui.fragments;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.technohub.melife.R;
 
@@ -20,7 +29,7 @@ import com.technohub.melife.R;
  * Use the {@link SuccessFrag4#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SuccessFrag4 extends Fragment {
+public class SuccessFrag4 extends DialogFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,6 +38,8 @@ public class SuccessFrag4 extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    View v;
+    ImageView newsuc;
 
     private OnFragmentInteractionListener mListener;
 
@@ -66,8 +77,13 @@ public class SuccessFrag4 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_success_frag4, container, false);
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        v= inflater.inflate(R.layout.fragment_success_frag4, container, false);
+        newsuc=(ImageView)v.findViewById(R.id.newsuc) ;
+        Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.sequential);
+        //I want to start animation here
+        newsuc.startAnimation(animation);
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -76,16 +92,20 @@ public class SuccessFrag4 extends Fragment {
             mListener.onFragmentInteraction(uri);
         }
     }
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        Window window = getDialog().getWindow();
+        if(window == null) return;
+        WindowManager.LayoutParams params = window.getAttributes();
+        params.width = 800;
+        params.height = 800;
+        window.setAttributes(params);
+    }
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+
     }
 
     @Override

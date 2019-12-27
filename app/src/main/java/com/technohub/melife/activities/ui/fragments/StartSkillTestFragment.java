@@ -93,7 +93,7 @@ public class StartSkillTestFragment extends Fragment {
         v=inflater.inflate(R.layout.fragment_start_test, container, false);
         v.setBackgroundColor(Color.WHITE);
         initViews();
-        callParentMethod();
+//        callParentMethod();
        starttest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,11 +113,11 @@ public class StartSkillTestFragment extends Fragment {
         getActivity().onBackPressed();
     }
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
+//    public void onButtonPressed(Uri uri) {
+//        if (mListener != null) {
+//            mListener.onFragmentInteraction(uri);
+//        }
+//    }
 
     void initViews()
     {

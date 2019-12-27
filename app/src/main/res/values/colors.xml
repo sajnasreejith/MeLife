@@ -12,4 +12,6 @@
     <color name="transparent_blue">#8C29B6F6</color>
     <color name="greycolor"> #80778899</color>
     <color name="themecolor">#14a0ca</color>
+    <color name="grey">#A9A9A9</color>
+    <color name="yellow">#FFA500</color>
 </resources>

@@ -28,7 +28,7 @@
         android:textSize="30dp"
         android:id="@+id/tv"
         android:layout_below="@id/succ"
-        android:textColor="@color/darkblue"
+        android:textColor="@color/whiteLogocolor"
         android:text="Awesome Choice"/>
     </LinearLayout>
 </FrameLayout>

@@ -1,15 +1,20 @@
 package com.technohub.melife.activities.ui.fragments;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -25,7 +30,7 @@ import com.technohub.melife.R;
  * Use the {@link SuccessFrag3#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SuccessFrag3 extends Fragment {
+public class SuccessFrag3  extends DialogFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -73,7 +78,7 @@ View v;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
        v= inflater.inflate(R.layout.fragment_success_frag3, container, false);
        spo=v.findViewById(R.id.spo);
        suc3=v.findViewById(R.id.suc3);
@@ -82,14 +87,14 @@ View v;
         //I want to start animation here
         suc3.startAnimation(animation);
         //Stop animation after 1 second
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                 suc3.clearAnimation();
-                 suc3.setVisibility(View.GONE);
-                 spo.setVisibility(View.GONE);
-            }
-        }, 1500);
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                 suc3.clearAnimation();
+//                 suc3.setVisibility(View.GONE);
+//                 spo.setVisibility(View.GONE);
+//            }
+//        }, 1500);
        return v;
     }
 
@@ -110,6 +115,17 @@ View v;
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Window window = getDialog().getWindow();
+        if(window == null) return;
+        WindowManager.LayoutParams params = window.getAttributes();
+        params.width = 800;
+        params.height = 800;
+        window.setAttributes(params);
     }
 
     /**

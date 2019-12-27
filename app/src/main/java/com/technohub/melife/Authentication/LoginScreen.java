@@ -20,6 +20,7 @@ public class LoginScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), BaseActivity.class));
+                finish();
             }
         });
         findViewById(R.id.btn_signup).setOnClickListener(new View.OnClickListener() {

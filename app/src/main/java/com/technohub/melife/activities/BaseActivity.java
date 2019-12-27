@@ -1,24 +1,16 @@
 package com.technohub.melife.activities;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.graphics.drawable.Drawable;
+
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+
 
 import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.core.content.res.ResourcesCompat;
-import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -26,8 +18,6 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
 import com.technohub.melife.R;
-import com.technohub.melife.activities.ui.fragments.QuestionAnswerFragment;
-import com.technohub.melife.activities.ui.fragments.ReportFragment;
 import com.technohub.melife.activities.ui.fragments.ViewTestReportFragment;
 import com.technohub.melife.activities.ui.home.HomeFragment;
 
@@ -37,6 +27,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -129,12 +120,9 @@ public class BaseActivity extends AppCompatActivity implements BottomNavigationV
         return true;
     }
 
-    @Override
-    public void onBackPressed(){
-
-    }
-
-
+//    @Override
+//    public void onBackPressed(){
+//    }
 
     @Override
     public boolean onSupportNavigateUp() {

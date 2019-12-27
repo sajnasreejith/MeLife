@@ -91,7 +91,7 @@ public class HomeFragment extends Fragment {
 
         v.setBackgroundColor(Color.WHITE);
                                 initView();
-                                callParentMethod();
+//                                callParentMethod();
         animBounce = AnimationUtils.loadAnimation(getContext(),
                 R.anim.bounce_animation);
 
@@ -208,6 +208,7 @@ public class HomeFragment extends Fragment {
         // and add the transaction to the back stack
         transaction.replace(R.id.homelayout, f);
         transaction.addToBackStack(null);
+
         transaction.commit();
 
     }

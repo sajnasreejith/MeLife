@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.skydoves.elasticviews.ElasticButton;
@@ -67,7 +68,6 @@ public class ViewTestReportFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
 //            title = getArguments().getString(Constants.PAGETITLE_KEY);
-
         }
     }
 
@@ -78,6 +78,7 @@ public class ViewTestReportFragment extends Fragment {
         v=inflater.inflate(R.layout.fragment_view_test_report, container, false);
         v.setBackgroundColor(Color.WHITE);
         viewRep=(ElasticButton)v.findViewById(R.id.btn_viewreport);
+
 //        callParentMethod();
 //        txt_skilltitle=v.findViewById(R.id.skill_title);
 //        txt_title=v.findViewById(R.id.viewrep_title);
@@ -89,22 +90,22 @@ public class ViewTestReportFragment extends Fragment {
         });
         return v;
     }
-
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
         }
     }
-    public void callParentMethod(){
-        getActivity().onBackPressed();
-    }
+//    // TODO: Rename method, update argument and hook method into UI event
+
+//    public void callParentMethod(){
+//        getActivity().onBackPressed();
+//        getFragmentManager().popBackStack();
+//    }
     @Override
     public void onResume() {
         super.onResume();
 //        txt_title.setText(title);
     }
-
     void fun()
     {
         // Create new fragment and transaction
@@ -119,6 +120,8 @@ public class ViewTestReportFragment extends Fragment {
         transaction.addToBackStack(null);
         transaction.commit();
     }
+
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

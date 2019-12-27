@@ -36,7 +36,7 @@ public class CelebrationFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private static int TIME_OUT = 2000;
+    private static int TIME_OUT = 1500;
     private OnFragmentInteractionListener mListener;
 
     public CelebrationFragment() {
@@ -75,7 +75,7 @@ public class CelebrationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        callParentMethod();
+//        callParentMethod();
         // Inflate the layout for this fragment
         new Handler().postDelayed(new Runnable() {
 

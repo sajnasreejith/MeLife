@@ -81,7 +81,7 @@ public class InstructionsFragment extends Fragment {
         // Inflate the layout for this fragment
          v=inflater.inflate(R.layout.fragment_instructn, container, false);
          initViews();
-         callParentMethod();
+//         callParentMethod();
          v.setBackgroundColor(Color.WHITE);
          proceed.setOnClickListener(new View.OnClickListener() {
              @Override

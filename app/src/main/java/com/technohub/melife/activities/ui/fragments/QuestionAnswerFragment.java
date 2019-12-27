@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -15,6 +16,7 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.util.Size;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +39,8 @@ import com.technohub.melife.activities.classes.Constants;
 import com.technohub.melife.activities.classes.MyBloomListener;
 import com.technohub.melife.activities.ui.home.HomeFragment;
 
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 import me.samlss.bloom.Bloom;
@@ -71,8 +75,8 @@ public class QuestionAnswerFragment extends Fragment {
     KonfettiView konfettiView;
 //    ElasticButton btnnext;
     View v;
-    int flag=0;
-
+    static int flag=0;
+    DialogFragment dialogFragment;
 //    private OnFragmentInteractionListener mListener;
 
     public QuestionAnswerFragment() {
@@ -115,22 +119,54 @@ public class QuestionAnswerFragment extends Fragment {
          v= inflater.inflate(R.layout.fragment_question_answer, container, false);
          v.setBackgroundColor(Color.WHITE);
          initViews();
-         callParentMethod();
+         v.setFocusableInTouchMode(true);
+         v.requestFocus();
+         v.setOnKeyListener(new View.OnKeyListener() {
+           @Override
+           public boolean onKey(View v, int keyCode, KeyEvent event) {
+               if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                   if (keyCode == KeyEvent.KEYCODE_BACK)
+                   {
+                       return true;
+                   }
+               }
+               return false;
+           }
+       });
+
+
+//         callParentMethod();
          answera.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View vi) {
                  Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.bounce_animation);
                  //I want to start animation here
                  answera.startAnimation(animation);
-                 //Stop animation after 1 second
+                 dialog();
                  new Handler().postDelayed(new Runnable() {
+
+                     /*
+                      * Showing splash screen with a timer. This will be useful when you
+                      * want to show case your app logo / company
+                      */
+
                      @Override
                      public void run() {
-                         answera.clearAnimation();
-                         Fragment f=new SuccessFrag1();
-                         fun(f);
+                         // This method will be executed once the timer is over
+                         // Start your app main activity
+                         dialogFragment.dismiss(); // when the task active then close the dialog
+                         selectAnswer();
                      }
-                 }, 2000);
+                 }, TIME_OUT);
+
+//                 new Handler().postDelayed(new Runnable() {
+//                     @Override
+//                     public void run() {
+//                         answera.clearAnimation();
+//                         Fragment f=new SuccessFrag1();
+//                         fun(f);
+//                     }
+//                 }, 2000);
 
 
 //                 Bloom.with(getActivity())
@@ -146,7 +182,7 @@ public class QuestionAnswerFragment extends Fragment {
 //                         .boom(vi);
 
 //                 answera.setBackgroundResource(R.drawable.bluedrawable);
-                 selectAnswer();
+
              }
          });
         answerb.setOnClickListener(new View.OnClickListener() {
@@ -157,14 +193,25 @@ public class QuestionAnswerFragment extends Fragment {
                 //I want to start animation here
                 answerb.startAnimation(animation);
                 //Stop animation after 1 second
+
+                dialog4();
                 new Handler().postDelayed(new Runnable() {
+
+                    /*
+                     * Showing splash screen with a timer. This will be useful when you
+                     * want to show case your app logo / company
+                     */
+
                     @Override
                     public void run() {
-                        answerb.clearAnimation();
-                        Fragment f=new SuccessFrag2();
-                        fun(f);
+                        // This method will be executed once the timer is over
+                        // Start your app main activity
+                        dialogFragment.dismiss(); // when the task active then close the dialog
+                        selectAnswer();
                     }
-                }, 2000);
+                }, TIME_OUT);
+
+
 //                Bloom.with(getActivity())
 //                        .setParticleRadius(10)
 //                        .setShapeDistributor(new RectShapeDistributor())
@@ -177,7 +224,7 @@ public class QuestionAnswerFragment extends Fragment {
 //                                .build())
 //                        .boom(vi);
 //                answerb.setBackgroundResource(R.drawable.bluedrawable);
-                selectAnswer();
+
             }
         });
         answerc.setOnClickListener(new View.OnClickListener() {
@@ -187,14 +234,26 @@ public class QuestionAnswerFragment extends Fragment {
                 //I want to start animation here
                 answerc.startAnimation(animation);
                 //Stop animation after 1 second
+
+                dialog3();
                 new Handler().postDelayed(new Runnable() {
+
+                    /*
+                     * Showing splash screen with a timer. This will be useful when you
+                     * want to show case your app logo / company
+                     */
+
                     @Override
                     public void run() {
-                        answerc.clearAnimation();
-                        Fragment f=new SuccessFrag3();
-                        fun(f);
+                        // This method will be executed once the timer is over
+                        // Start your app main activity
+                        dialogFragment.dismiss(); // when the task active then close the dialog
+                        selectAnswer();
                     }
-                }, 2000);
+                }, TIME_OUT);
+
+
+
 //                Bloom.with(getActivity())
 //                        .setParticleRadius(10)
 //                        .setShapeDistributor(new ParticleShapeDistributor() {
@@ -213,7 +272,7 @@ public class QuestionAnswerFragment extends Fragment {
 //                        .boom(vi);
 
 
-                selectAnswer();
+
             }
         });
         answerd.setOnClickListener(new View.OnClickListener() {
@@ -223,14 +282,29 @@ public class QuestionAnswerFragment extends Fragment {
                 //I want to start animation here
                 answerd.startAnimation(animation);
                 //Stop animation after 1 second
+                dialog2();
                 new Handler().postDelayed(new Runnable() {
+
+                    /*
+                     * Showing splash screen with a timer. This will be useful when you
+                     * want to show case your app logo / company
+                     */
+
                     @Override
                     public void run() {
-                        answerd.clearAnimation();
-                        Fragment f=new SuccessFrag1();
-                        fun(f);
+                        // This method will be executed once the timer is over
+                        // Start your app main activity
+                        dialogFragment.dismiss(); // when the task active then close the dialog
+                        selectAnswer();
                     }
-                }, 2000);
+                }, TIME_OUT);
+
+
+
+
+
+
+
 //                konfettiView.build()
 //                        .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
 //                        .setDirection(0.0, 359.0)
@@ -246,25 +320,54 @@ public class QuestionAnswerFragment extends Fragment {
 //                        .duration(200)
 //                        .repeat(2)
 //                        .playOn(v.findViewById(R.id.suc2));
-                         selectAnswer();
+
             }
         });
 
         answere.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View vi) {
-                Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.bounce_animation);
+                final Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.bounce_animation);
                 //I want to start animation here
                 answere.startAnimation(animation);
-                //Stop animation after 1 second
+//                        Fragment f=new SuccessFrag2();
+//                        fun(f);
+                dialog();
                 new Handler().postDelayed(new Runnable() {
+
+                    /*
+                     * Showing splash screen with a timer. This will be useful when you
+                     * want to show case your app logo / company
+                     */
+
                     @Override
                     public void run() {
-                        answere.clearAnimation();
-                        Fragment f=new SuccessFrag2();
-                        fun(f);
+                        // This method will be executed once the timer is over
+                        // Start your app main activity
+                        dialogFragment.dismiss(); // when the task active then close the dialog
+                         selectAnswer();
                     }
-                }, 2000);
+                }, TIME_OUT);
+//                selectAnswer();
+//                final Timer t = new Timer();
+//                t.schedule(new TimerTask() {
+//                    public void run() {
+//
+//
+//                        // also just top the timer thread, otherwise, you may receive a crash report
+//                    }
+//                }, 2000);
+
+                //Stop animation after 1 second
+//                new Handler().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        answere.clearAnimation();
+//                        animation.cancel();
+//                        Fragment f=new SuccessFrag2();
+//                        fun(f);
+//                    }
+//                }, 2000);
 //
 
 //                konfettiView.build()
@@ -281,46 +384,18 @@ public class QuestionAnswerFragment extends Fragment {
 
 
 
-                selectAnswer();
             }
         });
          return v;
     }
 void selectAnswer()
 {
-
-    setBackgroundColor_Button();
     flag++;
-    Qno.setText(flag+"");
-    if(flag==1) {
-
-        Question.setText(Constants.questions[flag]);
-    }
-    if(flag==2) {
-
-        Question.setText(Constants.questions[flag]);
-    }
-    if(flag==3) {
-        Question.setText(Constants.questions[flag]);
-
-    }
-    if(flag==4) {
-        Question.setText(Constants.questions[flag]);
-
-
-    }
-    if(flag==5) {
-        Question.setText(Constants.questions[flag]);
-
-
-    }
     if(flag<Constants.questions.length)
     {
+         Qno.setText(flag+1+" ");
         Question.setText(Constants.questions[flag]);
-    }
-    else
-    {
-
+        Toast.makeText(getContext(), "flag "+flag, Toast.LENGTH_SHORT).show();
     }
     if(flag==Constants.questions.length)
     {
@@ -329,6 +404,50 @@ void selectAnswer()
     }
 }
 
+void dialog()
+{
+    FragmentTransaction ft = getFragmentManager().beginTransaction();
+    Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+    if (prev != null) {
+        ft.remove(prev);
+    }
+    ft.addToBackStack(null);
+     dialogFragment = new SuccessFrag3();
+     dialogFragment.show(ft, "dialog");
+}
+    void dialog2()
+    {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+        dialogFragment = new SuccessFrag1();
+        dialogFragment.show(ft, "dialog");
+    }
+    void dialog3()
+    {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+        dialogFragment = new SuccessFrag2();
+        dialogFragment.show(ft, "dialog");
+    }
+    void dialog4()
+    {
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        Fragment prev = getFragmentManager().findFragmentByTag("dialog");
+        if (prev != null) {
+            ft.remove(prev);
+        }
+        ft.addToBackStack(null);
+        dialogFragment = new SuccessFrag4();
+        dialogFragment.show(ft, "dialog");
+    }
     void fun(Fragment f)
     {
             // Create new fragment and transaction
@@ -340,26 +459,18 @@ void selectAnswer()
             transaction.addToBackStack(null);
             transaction.commit();
 
+
     }
-    void setBackgroundColor_Button()
-    {
-        answere.setBackgroundResource(R.color.themecolor);
-        answerb.setBackgroundResource(R.color.themecolor);
-        answerc.setBackgroundResource(R.color.themecolor);
-        answerd.setBackgroundResource(R.color.themecolor);
-        answera.setBackgroundResource(R.color.themecolor);
-    }
+
     void initViews()
     {
-//        timer=v.findViewById(R.id.examtimer);
+
         answera=v.findViewById(R.id.answera);
         answerb=v.findViewById(R.id.answerb);
         answerc=v.findViewById(R.id.answerc);
         answerd=v.findViewById(R.id.answerd);
         answere=v.findViewById(R.id.answere);
-//        pagetitle1=v.findViewById(R.id.titlequestion1);
-//        pagetitle2=v.findViewById(R.id.titlequestion2);
-//        btnnext=(ElasticButton) v.findViewById(R.id.btn_next);
+
         Question=v.findViewById(R.id.txtQuestion);
         Qno=v.findViewById(R.id.txtQno);
         konfettiView = (KonfettiView)v.findViewById(R.id.viewKonfetti);
@@ -374,22 +485,8 @@ void selectAnswer()
     @Override
     public void onResume() {
         super.onResume();
-//        pagetitle1.setText(title);
-//        pagetitle2.setText(Constants.PAGETITLE_INTEREST);
         Question.setText(Constants.questions[flag]);
         Qno.setText(flag+1+" ");
-//        new CountDownTimer(60000, 1000) {
-//            public void onTick(long millisUntilFinished) {
-//                timer.setText(""+ millisUntilFinished / 1000);
-//                long millis = millisUntilFinished;
-//                String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis), TimeUnit.MILLISECONDS.toMinutes(millis) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(millis)), TimeUnit.MILLISECONDS.toSeconds(millis) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
-//                timer.setText(hms);//set text
-//            }
-//            public void onFinish() {
-//                timer.setText("done!");
-//            }
-//        }.start();
-
     }
 
     @Override
@@ -401,7 +498,6 @@ void selectAnswer()
     @Override
     public void onDetach() {
         super.onDetach();
-//        mListener = null;
     }
 
     }

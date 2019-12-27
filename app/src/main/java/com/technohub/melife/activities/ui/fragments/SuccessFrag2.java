@@ -1,15 +1,20 @@
 package com.technohub.melife.activities.ui.fragments;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -27,7 +32,7 @@ import com.technohub.melife.R;
  * Use the {@link SuccessFrag2#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SuccessFrag2 extends Fragment {
+public class SuccessFrag2 extends DialogFragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -75,7 +80,7 @@ ImageView suc2;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
+        getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
          v=inflater.inflate(R.layout.fragment_success_frag2, container, false);
         suc2=(ImageView)v.findViewById(R.id.suc2) ;
 
@@ -83,17 +88,26 @@ ImageView suc2;
         //I want to start animation here
         suc2.startAnimation(animation);
         //Stop animation after 1 second
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                suc2.clearAnimation();
-                suc2.setVisibility(View.GONE);
-            }
-        }, 1000);
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                suc2.clearAnimation();
+//                suc2.setVisibility(View.GONE);
+//            }
+//        }, 1000);
 
         return v;
     }
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        Window window = getDialog().getWindow();
+        if(window == null) return;
+        WindowManager.LayoutParams params = window.getAttributes();
+        params.width = 800;
+        params.height = 800;
+        window.setAttributes(params);
+    }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -115,7 +129,7 @@ ImageView suc2;
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
+
     }
 
     /**
